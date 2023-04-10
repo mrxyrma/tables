@@ -1,0 +1,32 @@
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.cards {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card__item_link {
+  color: black;
+}
+
+.card__item_link:hover {
+  color: black;
+}
+
+.card__item_name {
+  margin: 0;
+}

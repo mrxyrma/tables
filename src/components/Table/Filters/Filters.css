@@ -1,0 +1,6 @@
+.filters {
+    border: 1px red solid;
+    display: inline-block;
+    max-width: 330px;
+    min-height: 100%;
+}

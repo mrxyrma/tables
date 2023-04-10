@@ -1,0 +1,15 @@
+.header {
+    height: 50px;
+    background-color: #1B64A1;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.header__link {
+    color: white;
+}
+
+.header__link:hover {
+    color:white;
+}
