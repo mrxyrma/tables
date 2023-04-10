@@ -10,7 +10,7 @@ const data = JSON.parse(`{
             "power": "15",
             "current": "0.63",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -24,7 +24,7 @@ const data = JSON.parse(`{
             "power": "30",
             "current": "1.25",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -38,7 +38,7 @@ const data = JSON.parse(`{
             "power": "45",
             "current": "2",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -52,7 +52,7 @@ const data = JSON.parse(`{
             "power": "60",
             "current": "2.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -170,7 +170,7 @@ const data = JSON.parse(`{
             "power": "10",
             "current": "0.83",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -184,7 +184,7 @@ const data = JSON.parse(`{
             "power": "10",
             "current": "0.42",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -198,7 +198,7 @@ const data = JSON.parse(`{
             "power": "24",
             "current": "2",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -212,7 +212,7 @@ const data = JSON.parse(`{
             "power": "24",
             "current": "1",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -226,7 +226,7 @@ const data = JSON.parse(`{
             "power": "33",
             "current": "2.75",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -240,7 +240,7 @@ const data = JSON.parse(`{
             "power": "36",
             "current": "1.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -254,7 +254,7 @@ const data = JSON.parse(`{
             "power": "54",
             "current": "4.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -268,7 +268,7 @@ const data = JSON.parse(`{
             "power": "60",
             "current": "2.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -282,7 +282,7 @@ const data = JSON.parse(`{
             "power": "72",
             "current": "6",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -296,7 +296,7 @@ const data = JSON.parse(`{
             "power": "100",
             "current": "4.2",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -921,7 +921,7 @@ const data = JSON.parse(`{
             "power": "10",
             "current": "2",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -935,7 +935,7 @@ const data = JSON.parse(`{
             "power": "12",
             "current": "1",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -949,7 +949,7 @@ const data = JSON.parse(`{
             "power": "12",
             "current": "0.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -963,7 +963,7 @@ const data = JSON.parse(`{
             "power": "12",
             "current": "0.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -977,7 +977,7 @@ const data = JSON.parse(`{
             "power": "15",
             "current": "1.3",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -991,7 +991,7 @@ const data = JSON.parse(`{
             "power": "15",
             "current": "0.63",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -1005,7 +1005,7 @@ const data = JSON.parse(`{
             "power": "15",
             "current": "3",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -1019,7 +1019,7 @@ const data = JSON.parse(`{
             "power": "18",
             "current": "1.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -1033,7 +1033,7 @@ const data = JSON.parse(`{
             "power": "18",
             "current": "1.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -1047,7 +1047,7 @@ const data = JSON.parse(`{
             "power": "18",
             "current": "0.75",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -1061,7 +1061,7 @@ const data = JSON.parse(`{
             "power": "18",
             "current": "0.75",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -1075,7 +1075,7 @@ const data = JSON.parse(`{
             "power": "30",
             "current": "2.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -1089,7 +1089,7 @@ const data = JSON.parse(`{
             "power": "30",
             "current": "1.3",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -1103,7 +1103,7 @@ const data = JSON.parse(`{
             "power": "32.5",
             "current": "6.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -1117,7 +1117,7 @@ const data = JSON.parse(`{
             "power": "36",
             "current": "3",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -1131,7 +1131,7 @@ const data = JSON.parse(`{
             "power": "42",
             "current": "1.75",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -1145,7 +1145,7 @@ const data = JSON.parse(`{
             "power": "60",
             "current": "5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -1159,7 +1159,7 @@ const data = JSON.parse(`{
             "power": "60",
             "current": "4",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -1173,7 +1173,7 @@ const data = JSON.parse(`{
             "power": "60",
             "current": "2.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -1187,7 +1187,7 @@ const data = JSON.parse(`{
             "power": "60",
             "current": "2.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -1201,7 +1201,7 @@ const data = JSON.parse(`{
             "power": "84",
             "current": "3.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -1215,7 +1215,7 @@ const data = JSON.parse(`{
             "power": "90",
             "current": "3.75",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -1229,7 +1229,7 @@ const data = JSON.parse(`{
             "power": "91.2",
             "current": "3.8",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -1243,7 +1243,7 @@ const data = JSON.parse(`{
             "power": "96",
             "current": "2",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -1257,7 +1257,7 @@ const data = JSON.parse(`{
             "power": "96",
             "current": "4",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -1271,7 +1271,7 @@ const data = JSON.parse(`{
             "power": "100",
             "current": "4.2",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -1285,7 +1285,7 @@ const data = JSON.parse(`{
             "power": "120",
             "current": "5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -2599,7 +2599,7 @@ const data = JSON.parse(`{
             "power": "12",
             "current": "1",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -2613,7 +2613,7 @@ const data = JSON.parse(`{
             "power": "12",
             "current": "1",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -2627,7 +2627,7 @@ const data = JSON.parse(`{
             "power": "12",
             "current": "0.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -2641,7 +2641,7 @@ const data = JSON.parse(`{
             "power": "12",
             "current": "0.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -2655,7 +2655,7 @@ const data = JSON.parse(`{
             "power": "25",
             "current": "2",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -2669,7 +2669,7 @@ const data = JSON.parse(`{
             "power": "25",
             "current": "2",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -2683,7 +2683,7 @@ const data = JSON.parse(`{
             "power": "25",
             "current": "25",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -2697,7 +2697,7 @@ const data = JSON.parse(`{
             "power": "25",
             "current": "25",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -2711,7 +2711,7 @@ const data = JSON.parse(`{
             "power": "36",
             "current": "1.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -2725,7 +2725,7 @@ const data = JSON.parse(`{
             "power": "36",
             "current": "1.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -2739,7 +2739,7 @@ const data = JSON.parse(`{
             "power": "50",
             "current": "4.2",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -2753,7 +2753,7 @@ const data = JSON.parse(`{
             "power": "50",
             "current": "4.2",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -2767,7 +2767,7 @@ const data = JSON.parse(`{
             "power": "50",
             "current": "4.2",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -2781,7 +2781,7 @@ const data = JSON.parse(`{
             "power": "50",
             "current": "4.2",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -2795,7 +2795,7 @@ const data = JSON.parse(`{
             "power": "60",
             "current": "2.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -2809,7 +2809,7 @@ const data = JSON.parse(`{
             "power": "60",
             "current": "2.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -2823,7 +2823,7 @@ const data = JSON.parse(`{
             "power": "60",
             "current": "2.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -2837,7 +2837,7 @@ const data = JSON.parse(`{
             "power": "60",
             "current": "2.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -3020,7 +3020,7 @@ const data = JSON.parse(`{
             "power": "100",
             "current": "4.2",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -3034,7 +3034,7 @@ const data = JSON.parse(`{
             "power": "60",
             "current": "2.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -3048,7 +3048,7 @@ const data = JSON.parse(`{
             "power": "30",
             "current": "1.25",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -3192,7 +3192,7 @@ const data = JSON.parse(`{
             "power": "10",
             "current": "0.42",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -3206,7 +3206,7 @@ const data = JSON.parse(`{
             "power": "12",
             "current": "1",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -3220,7 +3220,7 @@ const data = JSON.parse(`{
             "power": "15",
             "current": "0.63",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -3234,7 +3234,7 @@ const data = JSON.parse(`{
             "power": "18",
             "current": "3.6",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -3248,7 +3248,7 @@ const data = JSON.parse(`{
             "power": "25",
             "current": "2.1",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -3262,7 +3262,7 @@ const data = JSON.parse(`{
             "power": "30",
             "current": "1.25",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -3276,7 +3276,7 @@ const data = JSON.parse(`{
             "power": "50",
             "current": "4.17",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -3290,7 +3290,7 @@ const data = JSON.parse(`{
             "power": "60",
             "current": "2.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -3798,7 +3798,7 @@ const data = JSON.parse(`{
             "power": "16",
             "current": "0.7",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -3812,7 +3812,7 @@ const data = JSON.parse(`{
             "power": "30",
             "current": "1.3",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -3826,7 +3826,7 @@ const data = JSON.parse(`{
             "power": "30",
             "current": "6",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -3840,7 +3840,7 @@ const data = JSON.parse(`{
             "power": "30",
             "current": "2.6",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -3854,7 +3854,7 @@ const data = JSON.parse(`{
             "power": "60",
             "current": "2.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -3868,7 +3868,7 @@ const data = JSON.parse(`{
             "power": "60",
             "current": "5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -3882,7 +3882,7 @@ const data = JSON.parse(`{
             "power": "90",
             "current": "3.8",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -3896,7 +3896,7 @@ const data = JSON.parse(`{
             "power": "96",
             "current": "4",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -3910,7 +3910,7 @@ const data = JSON.parse(`{
             "power": "96",
             "current": "2",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -5302,7 +5302,7 @@ const data = JSON.parse(`{
             "power": "30",
             "current": "1.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -5316,7 +5316,7 @@ const data = JSON.parse(`{
             "power": "60",
             "current": "2.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -5369,7 +5369,7 @@ const data = JSON.parse(`{
             "power": "150",
             "current": "6.25",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -5409,7 +5409,7 @@ const data = JSON.parse(`{
             "power": "10",
             "current": "0.42",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -5423,7 +5423,7 @@ const data = JSON.parse(`{
             "power": "10",
             "current": "0.83",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Нет",
             "dcOk": "Нет"
         },
@@ -5437,7 +5437,7 @@ const data = JSON.parse(`{
             "power": "30",
             "current": "1.3",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -5451,7 +5451,7 @@ const data = JSON.parse(`{
             "power": "25",
             "current": "2.1",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -5465,7 +5465,7 @@ const data = JSON.parse(`{
             "power": "60",
             "current": "2.5",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },
@@ -5479,7 +5479,7 @@ const data = JSON.parse(`{
             "power": "100",
             "current": "4.2",
             "type": "на DIN-рейку",
-            "formFactro": "модульный",
+            "formFactor": "модульный",
             "voltageAdj": "Да",
             "dcOk": "Нет"
         },

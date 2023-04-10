@@ -16,6 +16,20 @@ const Table = () => {
              )
     })
 
+    const brandsArray = Array.from(new Set(data.blocks.map(item => item.brand)));
+
+    const brands = brandsArray.map(item => {
+        return(<label>
+          <input type='checkbox' value={item} /> {item}
+        </label>
+        )
+      });
+
+
+      const filters = Object.keys(data.blocks[0]).filter(item => {
+        return item != 'id' && item != 'vendorCode' && item != 'name';
+      });
+
 
     return(
       <div className="table-page">
@@ -23,8 +37,10 @@ const Table = () => {
         <div className="table-page__content">
           <aside className='filters'>
             <h2 className='subtitle'>Фильтры:</h2>
-     
+
+              
               <h3 className='filter-title'>Бренд</h3>
+              {brands}
               <h3 className='filter-title'>Количество фаз на входе</h3>
               <h3 className='filter-title'>Номинальное выходное напряжение Uн, В DC</h3>
               <h3 className='filter-title'>Номинальная мощность Pн, Вт</h3>
