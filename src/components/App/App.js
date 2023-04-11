@@ -1,6 +1,6 @@
 import Header from '../Header/Header';
 import TablesCards from '../TablesCards/TablesCards';
-import Table from '../Table/Table';
+import PowerSupplies from '../PowerSupplies/PowerSupplies';
 import Footer from '../Footer/Footer';
 
 import {Routes, Route} from 'react-router-dom';
@@ -15,7 +15,7 @@ function App() {
       <main className='container'>
         <Routes>
           <Route path='/' element={<TablesCards />}/>
-          <Route path='/power' element={<Table />}/>
+          <Route path='/power-supplies' element={<PowerSupplies />}/>
         </Routes>
       </main>
       
