@@ -1,0 +1,10 @@
+.fieldset {
+  margin: 0 0 10px;
+  padding: 5px 2px;
+  border-radius: 2px;
+}
+
+.fieldset__title {
+  font-size: 14px;
+  font-weight: bold;
+} 

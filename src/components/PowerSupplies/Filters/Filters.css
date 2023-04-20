@@ -1,29 +1,4 @@
-.filter__title {
-    font-size: 14px;
-    font-weight: bold;
-  }
-  
-  .filter__checkbox {
-    appearance: none;
-    position: absolute;
-  }
-  
-  .filter__label{
-    padding: 3px;
-    margin: 1px 2px;
-    display: inline-block;
-    position: relative;
-  }
-  
-  .filter__label:has(.filter__checkbox:checked) {
-    background-color:#4aa4ee;
-    border-radius: 5px;
-    color: azure;
-  }
-  
-  .fieldset {
-    /* border: 1px red solid; */
-    margin: 0 0 10px;
-    padding: 5px 2px;
-    border-radius: 2px;
-  }
+.filters {
+  width: 250px;
+  height: 100%;
+}

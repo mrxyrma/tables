@@ -1,38 +1,20 @@
-import data from '../../../sources/power-supplies';
+import Fieldset from './Fieldset/Fieldset';
 
 import './Filters.css'
 
-function Filters() {
+function Filters({items}) {
   
-  const filtersTitles = Object.keys(data.blocks[0]).filter(item => !(item === 'id' || item === 'Артикул' || item === 'Наименование'));
+  const fieldsetTitles = Object.keys(items[0]).filter(item => !(item === 'id' || item === 'Артикул' || item === 'Наименование'));
 
-  const filters = filtersTitles.map(fieldsetTitle => {
-    const values = Array.from(new Set(data.blocks.map(item => item[`${fieldsetTitle}`])))
-      .sort((a, b) => a - b)
-      .map(label => {
-        return(
-          <label className='filter__label'>
-            <input type='checkbox' value={label} className='filter__checkbox' /> 
-            {label}
-          </label>
-        )
-      }
-    );
+  const fieldsets = fieldsetTitles.map(fieldsetTitle => <Fieldset title={fieldsetTitle} items={items}/>)
 
     return(
-      <fieldset className='fieldset'>
-        <legend className='filter__title'>{fieldsetTitle}</legend>
-          {values}
-      </fieldset>
-    )
-  }); 
-
-    return(
-      <>
-        <form className='filter'>
-          {filters}
-        </form>
-      </>
+      <aside className='filters'>
+          <h2 className='subtitle'>Фильтры:</h2>
+          <form className='filter'>
+            {fieldsets}
+          </form>
+      </aside>
     )
 }
 

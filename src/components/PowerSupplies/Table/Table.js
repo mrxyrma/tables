@@ -1,11 +1,9 @@
 import Item from './Item/Item';
 
-import data from '../../../sources/power-supplies';
-
 import './Table.css'
 
-const Table = () => {
-  const elements = data.blocks.map(item => {
+const Table = ({items}) => {
+  const elements = items.map(item => {
     const {id, ...itemProps} = item;
     return(
       <Item 
@@ -18,9 +16,9 @@ const Table = () => {
   return(
     <ul className="table">
       <li className='list-item'>
-        <p className='list-item__cell'>Бренд</p>
-        <p className='list-item__cell'>Артикул</p>
-        <p className='list-item__cell'>Наименование</p>
+        <p className='list-item__cell subtitle'>Бренд</p>
+        <p className='list-item__cell subtitle'>Артикул</p>
+        <p className='list-item__cell subtitle'>Наименование</p>
       </li>
       {elements}
   </ul>

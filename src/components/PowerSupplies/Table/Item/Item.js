@@ -1,7 +1,6 @@
 import './Item.css'
 
 function Item(props) {
-   
     return(
         <li className='list-item'>
             <p className='list-item__cell'>{props['Бренд']}</p>
@@ -12,4 +11,3 @@ function Item(props) {
 }
 
 export default Item;
-
