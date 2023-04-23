@@ -2,11 +2,16 @@ import Fieldset from './Fieldset/Fieldset';
 
 import './Filters.css'
 
-function Filters({items}) {
+function Filters({items, setItems}) {
   
   const fieldsetTitles = Object.keys(items[0]).filter(item => !(item === 'id' || item === 'Артикул' || item === 'Наименование'));
 
-  const fieldsets = fieldsetTitles.map(fieldsetTitle => <Fieldset title={fieldsetTitle} items={items}/>)
+  const fieldsets = fieldsetTitles.map(fieldsetTitle => 
+    <Fieldset
+      key={[fieldsetTitle]}
+      title={fieldsetTitle}
+      items={items}
+      />)
 
     return(
       <aside className='filters'>
