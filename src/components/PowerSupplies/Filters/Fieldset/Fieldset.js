@@ -19,7 +19,7 @@ function Fieldset({title, items}) {
   })
 
   return(
-    <fieldset className='fieldset' onChange={visibleData}>
+    <fieldset className='fieldset' onChange={visibleData} name={title}>
       <legend className='fieldset__title'>{title}</legend>
         {filterButtons}
     </fieldset>

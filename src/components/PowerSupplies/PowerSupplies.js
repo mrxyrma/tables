@@ -3,20 +3,27 @@ import Table from './Table/Table';
 
 import data from '../../sources/power-supplies';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import './PowerSupplies.css';
+import SearchPanel from '../SearchPanel/SearchPanel';
 
 function PowerSupplies() {
 
   const [items, setItems] = useState(data.blocks);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filterItems = useMemo(() => {
+    return items.filter(item => item['Артикул'].toLowerCase().includes(searchQuery.toLowerCase()))
+  }, [searchQuery]);
 
   return(
     <>
+      <SearchPanel searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
       <h1 className='title'>Подбор источников питания</h1>
       <div className="table-page__content">
-        <Filters items={items} setItems={setItems}/>
-        <Table items={items}/>
+        <Filters items={data.blocks}/>
+        <Table items={filterItems}/>
       </div>
     </>
   )

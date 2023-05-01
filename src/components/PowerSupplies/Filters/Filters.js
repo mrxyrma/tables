@@ -2,7 +2,7 @@ import Fieldset from './Fieldset/Fieldset';
 
 import './Filters.css'
 
-function Filters({items, setItems}) {
+function Filters({items}) {
   
   const fieldsetTitles = Object.keys(items[0]).filter(item => !(item === 'id' || item === 'Артикул' || item === 'Наименование'));
 
