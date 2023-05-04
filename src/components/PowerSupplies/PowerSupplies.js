@@ -13,7 +13,7 @@ function PowerSupplies() {
   const [items, setItems] = useState(data.blocks);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const filterItems = useMemo(() => {
+  let filterItems = useMemo(() => {
     return items.filter(item => item['Артикул'].toLowerCase().includes(searchQuery.toLowerCase()))
   }, [searchQuery]);
 
@@ -22,7 +22,7 @@ function PowerSupplies() {
       <SearchPanel searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
       <h1 className='title'>Подбор источников питания</h1>
       <div className="table-page__content">
-        <Filters items={data.blocks} setItems={setItems}/>
+        <Filters items={data.blocks}/>
         <Table items={filterItems}/>
       </div>
     </>
