@@ -14,3 +14,4 @@ function SearchPanel({searchQuery, setSearchQuery}) {
 }
 
 export default SearchPanel;
+export default SearchPanel;

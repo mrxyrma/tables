@@ -7,6 +7,7 @@ import { useMemo, useState } from 'react';
 
 import './PowerSupplies.css';
 import SearchPanel from '../SearchPanel/SearchPanel';
+import SearchPanel from '../SearchPanel/SearchPanel';
 
 function PowerSupplies() {
 
