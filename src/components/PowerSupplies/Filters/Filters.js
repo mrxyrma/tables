@@ -8,7 +8,7 @@ function Filters({items}) {
 
   const fieldsets = fieldsetTitles.map(fieldsetTitle => 
     <Fieldset
-      key={[fieldsetTitle]}
+      key={fieldsetTitle}
       title={fieldsetTitle}
       items={items}
       />)

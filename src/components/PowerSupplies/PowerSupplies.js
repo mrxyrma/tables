@@ -1,13 +1,12 @@
+import data from '../../sources/power-supplies';
+
 import Filters from './Filters/Filters';
 import Table from './Table/Table';
-
-import data from '../../sources/power-supplies';
+import SearchPanel from '../SearchPanel/SearchPanel';
 
 import { useMemo, useState } from 'react';
 
 import './PowerSupplies.css';
-import SearchPanel from '../SearchPanel/SearchPanel';
-import SearchPanel from '../SearchPanel/SearchPanel';
 
 function PowerSupplies() {
 
@@ -23,7 +22,7 @@ function PowerSupplies() {
       <SearchPanel searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
       <h1 className='title'>Подбор источников питания</h1>
       <div className="table-page__content">
-        <Filters items={data.blocks}/>
+        <Filters items={items}/>
         <Table items={filterItems}/>
       </div>
     </>
