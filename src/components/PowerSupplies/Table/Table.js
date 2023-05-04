@@ -3,7 +3,7 @@ import Item from './Item/Item';
 import './Table.css'
 
 const Table = ({items}) => {
-  const elements = items().map(item => {
+  const elements = items.map(item => {
     const {id, ...itemProps} = item;
     return(
       <Item 

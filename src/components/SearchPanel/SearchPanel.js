@@ -5,7 +5,7 @@ function SearchPanel({searchQuery, setSearchQuery}) {
   return(
     <input 
         type='text'
-        placeholder='Поиск артикула'
+        placeholder='Поиск по артикулу'
         className='search-panel'
         value={searchQuery}
         onChange={e => setSearchQuery(e.target.value)}
@@ -13,5 +13,4 @@ function SearchPanel({searchQuery, setSearchQuery}) {
   )
 }
 
-export default SearchPanel;
 export default SearchPanel;
