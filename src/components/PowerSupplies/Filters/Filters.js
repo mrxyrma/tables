@@ -2,7 +2,7 @@ import Fieldset from './Fieldset/Fieldset';
 
 import './Filters.css'
 
-function Filters({items}) {
+function Filters({items, setItems}) {
   
   const fieldsetTitles = Object.keys(items[0]).filter(item => !(item === 'id' || item === 'Артикул' || item === 'Наименование'));
 
@@ -11,15 +11,15 @@ function Filters({items}) {
       key={fieldsetTitle}
       title={fieldsetTitle}
       items={items}
-      selBtns={selBtns}
+      getSelectedBtns={getSelectedBtns}
     />
     )
 
-    let arr = {};
+    const selectedBtns = {}
 
-    function selBtns(fieldsetTitle, value) {
-      arr[fieldsetTitle] = value;
-      console.log(arr);
+    function getSelectedBtns(fieldsetTitle, value) {
+      selectedBtns[fieldsetTitle] = value;
+      console.log(selectedBtns);
     }
 
     return(
