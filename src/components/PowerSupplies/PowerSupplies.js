@@ -4,7 +4,7 @@ import Filters from './Filters/Filters';
 import Table from './Table/Table';
 import SearchPanel from '../SearchPanel/SearchPanel';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import './PowerSupplies.css';
 
@@ -13,8 +13,11 @@ function PowerSupplies() {
   const [items, setItems] = useState(data.blocks);
   const [searchQuery, setSearchQuery] = useState('');
 
-  let filterItems = useMemo(() => {
-    return items.filter(item => item['Артикул'].toLowerCase().includes(searchQuery.toLowerCase()))
+  useEffect(() => {
+    function filterBySearchQuery() {
+      setItems(data.blocks.filter(item => item['Артикул'].toLowerCase().includes(searchQuery.toLowerCase())))
+    }
+    filterBySearchQuery()
   }, [searchQuery]);
 
   return(
@@ -23,7 +26,7 @@ function PowerSupplies() {
       <h1 className='title'>Подбор источников питания</h1>
       <div className="table-page__content">
         <Filters items={data.blocks}/>
-        <Table items={filterItems}/>
+        <Table items={items}/>
       </div>
     </>
   )
