@@ -9,7 +9,9 @@ function Fieldset({title, items, getSelectedBtns}) {
   
   function takeSelectedBtns(e){
     const selectedBtns = Array.from(e.currentTarget.elements).filter(item => item.checked).map(item => item.value)
-    getSelectedBtns(title, selectedBtns)
+    const objectWithFieldset = {}
+    objectWithFieldset[title] = selectedBtns
+    getSelectedBtns(objectWithFieldset)
   }
   
   return(
