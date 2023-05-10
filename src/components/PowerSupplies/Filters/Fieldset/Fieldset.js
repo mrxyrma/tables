@@ -2,14 +2,17 @@ import FilterButton from './FilterButton/FilterButton';
 
 import './Fieldset.css';
 
-function Fieldset({title, items, getSelectedBtns}) {
-  const filterButtons = Array.from(new Set(items.map(item => item[`${title}`])))
+function Fieldset({title, data, getSelectedBtns}) {
+  const filterButtons = Array.from(new Set(data.map(item => item[`${title}`])))
       .sort((a, b) => a - b)
       .map(label => <FilterButton key={label} label={label}/>);
   
   function takeSelectedBtns(e){
-    const selectedBtns = Array.from(e.currentTarget.elements).filter(item => item.checked).map(item => item.value)
+    let selectedBtns = Array.from(e.currentTarget.elements).filter(item => item.checked).map(item => item.value)
     const objectWithFieldset = {}
+    if (selectedBtns.length === 0) {
+      selectedBtns = '$$$';
+    }
     objectWithFieldset[title] = selectedBtns
     getSelectedBtns(objectWithFieldset)
   }

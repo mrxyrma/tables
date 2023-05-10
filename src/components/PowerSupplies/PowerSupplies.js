@@ -25,7 +25,7 @@ function PowerSupplies() {
       <SearchPanel searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
       <h1 className='title'>Подбор источников питания</h1>
       <div className="table-page__content">
-        <Filters items={data.blocks} setItems={setItems}/>
+        <Filters data={data.blocks} items={items} setItems={setItems}/>
         <Table items={items}/>
       </div>
     </>
