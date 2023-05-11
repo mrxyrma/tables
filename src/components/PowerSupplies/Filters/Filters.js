@@ -7,16 +7,15 @@ function Filters({data, items, setItems}) {
   
   const fieldsetTitles = Object.keys(data[0]).filter(item => !(item === 'id' || item === 'Артикул' || item === 'Наименование'))
 
-  fieldsetTitles.forEach((item, index) => {
+  fieldsetTitles.forEach((fieldsetTitle, index) => {
     const obj = {}
-    obj[item] = ['Empty array']
+    obj[fieldsetTitle] = Array.from(new Set(data.map(item => item[`${fieldsetTitle}`])))
     arrayWithFilters[index] = obj
   })
 
   function getSelectedBtns(objectWithFieldset) {
     const index = fieldsetTitles.indexOf(Object.keys(objectWithFieldset)[0])
     arrayWithFilters[index] = objectWithFieldset
-    console.log(arrayWithFilters)
   }
 
   const fieldsets = fieldsetTitles.map(fieldsetTitle =>
@@ -30,13 +29,17 @@ function Filters({data, items, setItems}) {
 
   function settingItems(e) {
     e.preventDefault()
-    items.filter(item => {
-      //нужно пройтись по каждому свойству отдельной позиции (item) и проверить есть ли её значение в arrayWithFilters
-      fieldsetTitles.forEach(fieldsetTitle => {
-        arrayWithFilters.includes(item[fieldsetTitle])
-        console.log(item[fieldsetTitle])
-      })
+    const filteredItems = items.filter(item => {
+    
+    const arrWithValues = []
+    fieldsetTitles.forEach(fieldsetTitle => {
+      arrWithValues.push(item[fieldsetTitle])
     })
+
+     })
+
+    console.log(filteredItems);
+    
   }
 
   return(
