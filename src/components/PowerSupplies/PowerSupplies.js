@@ -13,12 +13,12 @@ function PowerSupplies() {
   const [items, setItems] = useState(data.blocks);
   const [searchQuery, setSearchQuery] = useState('');
 
-  useEffect(() => {
-    function filterBySearchQuery() {
-      setItems(data.blocks.filter(item => item['Артикул'].toLowerCase().includes(searchQuery.toLowerCase())))
-    }
-    filterBySearchQuery()
-  }, [searchQuery]);
+  // useEffect(() => {
+  //   function filterBySearchQuery() {
+  //     setItems(data.blocks.filter(item => item['Артикул'].toLowerCase().includes(searchQuery.toLowerCase())))
+  //   }
+  //   filterBySearchQuery()
+  // }, [searchQuery]);
 
   return(
     <>
