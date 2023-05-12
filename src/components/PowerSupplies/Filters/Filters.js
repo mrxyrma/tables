@@ -2,7 +2,7 @@ import Fieldset from './Fieldset/Fieldset';
 
 import './Filters.css'
 
-function Filters({data, items, setItems}) {
+function Filters({data, setItems}) {
   let arrayWithFilters = []
   
   const fieldsetTitles = Object.keys(data[0]).filter(item => !(item === 'id' || item === 'Артикул' || item === 'Наименование'))
@@ -29,23 +29,26 @@ function Filters({data, items, setItems}) {
 
   function settingItems(e) {
     e.preventDefault()
-    const filteredItems = items.filter(item => {
+    const filteredItems = data.filter(item => {
     
-    const arrWithValues = []
-    fieldsetTitles.forEach(fieldsetTitle => {
-      arrWithValues.push(item[fieldsetTitle])
+      const arrWithValues = []
+      fieldsetTitles.forEach(fieldsetTitle => {
+        arrWithValues.push(item[fieldsetTitle])
+      })
+
+      return arrWithValues.every((arrItem, index) => {
+        return arrayWithFilters[index][Object.keys(arrayWithFilters[index])[0]].includes(arrItem)
+      })
+      
     })
-
-     })
-
-    console.log(filteredItems);
-    
+    setItems(filteredItems)
   }
 
+  
   return(
     <aside className='filters'>
         <h2 className='subtitle'>Фильтры:</h2>
-        <form className='filter'>
+        <form className='filter' onChange={() => console.log(arrayWithFilters)}>
           {fieldsets}
           <button onClick={settingItems}>Подобрать!</button>
         </form>

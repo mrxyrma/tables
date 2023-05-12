@@ -9,6 +9,9 @@ function Fieldset({title, data, getSelectedBtns}) {
   
   function takeSelectedBtns(e){
     let selectedBtns = Array.from(e.currentTarget.elements).filter(item => item.checked).map(item => item.value)
+    if(!selectedBtns.length) {
+      selectedBtns = Array.from(e.currentTarget.elements).map(item => item.value)
+    }
     const objectWithFieldset = {}
     objectWithFieldset[title] = selectedBtns
     getSelectedBtns(objectWithFieldset)
