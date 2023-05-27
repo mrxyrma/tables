@@ -11,7 +11,7 @@
 }
 
 .filter__label:has(.filter__checkbox:checked) {
-  background-color:#4aa4ee;
+  background-color:#64a0d2;
   border-radius: 5px;
   color: azure;
 }

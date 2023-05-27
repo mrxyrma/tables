@@ -25,4 +25,4 @@ function Fieldset({title, data, getSelectedBtns}) {
   )
 }
 
-export default Fieldset;
+export default Fieldset

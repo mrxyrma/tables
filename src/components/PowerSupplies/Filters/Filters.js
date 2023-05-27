@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import Fieldset from './Fieldset/Fieldset';
 
 import './Filters.css'
@@ -19,41 +20,39 @@ function Filters({data, setItems}) {
   }
 
   const fieldsets = fieldsetTitles.map(fieldsetTitle =>
-    <Fieldset
-      key={fieldsetTitle}
-      title={fieldsetTitle}
-      data={data}
-      getSelectedBtns={getSelectedBtns}
-    />
+      <Fieldset
+        key={fieldsetTitle}
+        title={fieldsetTitle}
+        data={data}
+        getSelectedBtns={getSelectedBtns}
+      />
   )
 
   function settingItems(e) {
     e.preventDefault()
+
     const filteredItems = data.filter(item => {
     
-      const arrWithValues = []
+      const arrWithValues = [] //массив со значеними отдельного item
       fieldsetTitles.forEach(fieldsetTitle => {
         arrWithValues.push(item[fieldsetTitle])
       })
 
-      return arrWithValues.every((arrItem, index) => {
-        return arrayWithFilters[index][Object.keys(arrayWithFilters[index])[0]].includes(arrItem)
-      })
-      
+      return arrWithValues.every((arrItem, index) => arrayWithFilters[index][Object.keys(arrayWithFilters[index])[0]].includes(arrItem))
+
     })
     setItems(filteredItems)
   }
-
   
   return(
     <aside className='filters'>
         <h2 className='subtitle'>Фильтры:</h2>
         <form className='filter' onChange={() => console.log(arrayWithFilters)}>
           {fieldsets}
-          <button onClick={settingItems}>Подобрать!</button>
+          <button className='filters__button' onClick={settingItems}>Подобрать!</button>
         </form>
     </aside>
   )
 }
 
-export default Filters;
+export default memo(Filters);

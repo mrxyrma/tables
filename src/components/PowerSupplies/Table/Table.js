@@ -20,7 +20,9 @@ const Table = ({items}) => {
         <p className='list-item__cell subtitle'>Артикул</p>
         <p className='list-item__cell subtitle'>Наименование</p>
       </li>
-      {elements}
+      {items.length
+        ? elements
+        : <p className='list-item__no-items-title'>Изделий с выбранными характеристиками нет<br/>Попробуйте изменить критерии поиска</p>}
   </ul>
   )
 }

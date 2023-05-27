@@ -10,3 +10,11 @@
     text-align: center;
     margin: 0;
 }
+
+.list-item__no-items-title {
+    text-align: center;
+    padding: 0;
+    margin: 20px 0 0;
+    font-size: 18px;
+    white-space: pre-wrap;
+}
