@@ -9,13 +9,13 @@ import './PowerSupplies.css';
 
 function PowerSupplies() {
 
-  const [items, setItems] = useState(data.blocks);
+  const [items, setItems] = useState(data['Источники питания']);
   
   return(
     <>
       <h1 className='title'>Подбор источников питания</h1>
       <div className="table-page__content">
-        <Filters data={data.blocks} setItems={setItems}/>
+        <Filters data={data['Источники питания']} setItems={setItems}/>
         <Table items={items}/>
       </div>
     </>
