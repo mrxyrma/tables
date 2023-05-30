@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mrxyrma/tables/static/css/main.3e3353d9.css",
+    "main.js": "/mrxyrma/tables/static/js/main.c98f6ee7.js",
+    "index.html": "/mrxyrma/tables/index.html",
+    "main.3e3353d9.css.map": "/mrxyrma/tables/static/css/main.3e3353d9.css.map",
+    "main.c98f6ee7.js.map": "/mrxyrma/tables/static/js/main.c98f6ee7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3e3353d9.css",
+    "static/js/main.c98f6ee7.js"
+  ]
+}
