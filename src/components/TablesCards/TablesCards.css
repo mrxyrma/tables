@@ -21,10 +21,16 @@
 
 .card__item_link {
   color: black;
+  text-align: center;
 }
 
 .card__item_link:hover {
   color: black;
+}
+
+.card__item_image {
+  max-width: 100%;
+  max-height: 120px;
 }
 
 .card__item_name {

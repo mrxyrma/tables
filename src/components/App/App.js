@@ -1,4 +1,5 @@
 import powerSupplies from '../../sources/power-supplies';
+import dinRails from '../../sources/din-rails';
 
 import Header from '../Header/Header';
 import TablesCards from '../TablesCards/TablesCards';
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path='/' element={<TablesCards />}/>
           <Route path='/power-supplies' element={<SelectionPage data={powerSupplies}/>}/>
+          <Route path='/din-rails' element={<SelectionPage data={dinRails}/>}/>
         </Routes>
       </main>
       
