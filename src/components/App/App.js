@@ -1,6 +1,8 @@
+import powerSupplies from '../../sources/power-supplies';
+
 import Header from '../Header/Header';
 import TablesCards from '../TablesCards/TablesCards';
-import PowerSupplies from '../PowerSupplies/PowerSupplies';
+import SelectionPage from '../SelectionPage/SelectionPage';
 import Footer from '../Footer/Footer';
 
 import {Routes, Route} from 'react-router-dom';
@@ -15,7 +17,7 @@ function App() {
       <main className='container'>
         <Routes>
           <Route path='/' element={<TablesCards />}/>
-          <Route path='/power-supplies' element={<PowerSupplies />}/>
+          <Route path='/power-supplies' element={<SelectionPage data={powerSupplies}/>}/>
         </Routes>
       </main>
       

@@ -1,6 +1,6 @@
-const data = JSON.parse(`
+const powerSupplies = JSON.parse(`
 {
-    "Источники питания": [
+    "Массив с таблицей": [
         {
             "id": "1",
             "Бренд": "КЭАЗ",
@@ -6664,4 +6664,4 @@ const data = JSON.parse(`
     ]
 }`);
 
-export default data;
+export default powerSupplies;
