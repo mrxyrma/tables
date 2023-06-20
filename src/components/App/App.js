@@ -1,6 +1,7 @@
 import powerSupplies from '../../sources/power-supplies';
 import dinRails from '../../sources/din-rails';
 import mpsb from '../../sources/mpsb';
+import cableBox from '../../sources/cable-box';
 
 import Header from '../Header/Header';
 import TablesCards from '../TablesCards/TablesCards';
@@ -22,6 +23,7 @@ function App() {
           <Route path='/power-supplies' element={<SelectionPage data={powerSupplies}/>}/>
           <Route path='/din-rails' element={<SelectionPage data={dinRails}/>}/>
           <Route path='/mpsb' element={<SelectionPage data={mpsb}/>}/>
+          <Route path='/cable-box' element={<SelectionPage data={cableBox}/>}/>
         </Routes>
       </main>
       

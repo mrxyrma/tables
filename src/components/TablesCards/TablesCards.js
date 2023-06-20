@@ -26,9 +26,9 @@ function TablesCards() {
           </Link>
         </li>
         <li className="card__item">
-          <Link className='card__item_link' to='/power-supplies'>
-            <img className='card__item_image' src='https://files.keaz.ru/f/38757/obschaya_category.jpg'/>
-            <p className='card__item_name'>Источники питания</p>
+          <Link className='card__item_link' to='/cable-box'>
+            <img className='card__item_image' src='https://www.minimaks.ru/upload/iblock/3ba/wuegx7gkfarpbgpqs9x09jx9ufvvhvoy.jpg'/>
+            <p className='card__item_name'>Кабельные каналы</p>
           </Link>
         </li>
         <li className="card__item">
