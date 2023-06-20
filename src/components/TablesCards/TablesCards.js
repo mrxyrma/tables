@@ -38,9 +38,9 @@ function TablesCards() {
           </Link>
         </li>
         <li className="card__item">
-          <Link className='card__item_link' to='/power-supplies'>
-            <img className='card__item_image' src='https://files.keaz.ru/f/38757/obschaya_category.jpg'/>
-            <p className='card__item_name'>Источники питания</p>
+          <Link className='card__item_link' to='/buzzers'>
+            <img className='card__item_image' src='https://chint-electric.ru/image/cache/data/indicator/ND16-Buzzer-red-280x280.jpg'/>
+            <p className='card__item_name'>Зуммеры</p>
           </Link>
         </li>
         <li className="card__item">
