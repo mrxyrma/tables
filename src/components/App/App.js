@@ -4,6 +4,7 @@ import mpsb from '../../sources/mpsb';
 import cableBox from '../../sources/cable-box';
 import monoblockLights from '../../sources/monoblock-lights';
 import buzzers from '../../sources/buzzers';
+import modularSockets from '../../sources/modular-sockets';
 
 import Header from '../Header/Header';
 import TablesCards from '../TablesCards/TablesCards';
@@ -28,6 +29,7 @@ function App() {
           <Route path='/cable-box' element={<SelectionPage data={cableBox}/>}/>
           <Route path='/monoblock-lights' element={<SelectionPage data={monoblockLights}/>}/>
           <Route path='/buzzers' element={<SelectionPage data={buzzers}/>}/>
+          <Route path='/modular-sockets' element={<SelectionPage data={modularSockets}/>}/>
         </Routes>
       </main>
       
