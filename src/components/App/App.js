@@ -2,6 +2,7 @@ import powerSupplies from '../../sources/power-supplies';
 import dinRails from '../../sources/din-rails';
 import mpsb from '../../sources/mpsb';
 import cableBox from '../../sources/cable-box';
+import monoblockLights from '../../sources/monoblock-lights';
 
 import Header from '../Header/Header';
 import TablesCards from '../TablesCards/TablesCards';
@@ -24,6 +25,7 @@ function App() {
           <Route path='/din-rails' element={<SelectionPage data={dinRails}/>}/>
           <Route path='/mpsb' element={<SelectionPage data={mpsb}/>}/>
           <Route path='/cable-box' element={<SelectionPage data={cableBox}/>}/>
+          <Route path='/monoblock-lights' element={<SelectionPage data={monoblockLights}/>}/>
         </Routes>
       </main>
       
