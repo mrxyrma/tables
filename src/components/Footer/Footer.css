@@ -14,3 +14,12 @@
   column-gap: 20px;
   justify-content: space-between;
 }
+
+.footer__copy {
+  color: white;
+}
+
+.footer__copy:hover {
+  color: white;
+  opacity: .7;
+}
