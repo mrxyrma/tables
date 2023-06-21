@@ -49,7 +49,12 @@ function TablesCards() {
             <p className='card__item_name'>Модульные розетки</p>
           </Link>
         </li>
-        
+        <li className="card__item">
+          <Link className='card__item_link' to='/mcb'>
+            <img className='card__item_image' src='https://chint.ru/upload/iblock/8df/3ttbesj6pselyirvtbldo05lgx7tfg0g/NB1-63%20DC%20%20%20182721_0.jpg'/>
+            <p className='card__item_name'>Модульные автоматические выключатели</p>
+          </Link>
+        </li>
       </ul>
     </>
   )
