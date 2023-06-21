@@ -24,14 +24,14 @@ function App() {
       <main className='container'>
         <Routes>
           <Route path='/' element={<TablesCards />}/>
-          <Route path='/power-supplies' element={<SelectionPage data={powerSupplies}/>}/>
-          <Route path='/din-rails' element={<SelectionPage data={dinRails}/>}/>
-          <Route path='/mpsb' element={<SelectionPage data={mpsb}/>}/>
-          <Route path='/cable-box' element={<SelectionPage data={cableBox}/>}/>
-          <Route path='/monoblock-lights' element={<SelectionPage data={monoblockLights}/>}/>
-          <Route path='/buzzers' element={<SelectionPage data={buzzers}/>}/>
-          <Route path='/modular-sockets' element={<SelectionPage data={modularSockets}/>}/>
-          <Route path='/mcb' element={<SelectionPage data={mcb}/>}/>
+          <Route path='/power-supplies' element={<SelectionPage data={powerSupplies} title={'Источники питания'}/>}/>
+          <Route path='/din-rails' element={<SelectionPage data={dinRails} title={'Дин-рейки'}/>}/>
+          <Route path='/mpsb' element={<SelectionPage data={mpsb} title={'Автоматы защиты двигателя'}/>}/>
+          <Route path='/cable-box' element={<SelectionPage data={cableBox} title={'Кабельные каналы'}/>}/>
+          <Route path='/monoblock-lights' element={<SelectionPage data={monoblockLights} title={'Световые индикаторы'}/>}/>
+          <Route path='/buzzers' element={<SelectionPage data={buzzers} title={'Зуммеры'}/>}/>
+          <Route path='/modular-sockets' element={<SelectionPage data={modularSockets} title={'Модульные розетки'}/>}/>
+          <Route path='/mcb' element={<SelectionPage data={mcb} title={'Модульные автоматические выключатели'}/>}/>
         </Routes>
       </main>
       
