@@ -36,3 +36,17 @@
 .card__item_name {
   margin: 0;
 }
+
+@media screen and (max-width: 750px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}

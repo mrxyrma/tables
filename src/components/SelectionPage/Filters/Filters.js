@@ -42,7 +42,7 @@ function Filters({data, setItems}) {
 
     })
     setItems(filteredItems)
-    window.scrollTo(0, 0)
+    document.querySelector('.table').scrollIntoView({behavior: 'smooth', block: 'start'})
   }
   
   return(

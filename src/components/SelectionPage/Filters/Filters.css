@@ -1,6 +1,7 @@
 .filters {
   width: 250px;
   height: 100%;
+  position: relative;
 }
 
 .filters__button {
@@ -14,4 +15,21 @@
 
 .filters__button:hover {
   opacity: .9;
+}
+
+@media screen and (max-width: 750px) {
+  .filters {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .filter:last-child {
+    padding-bottom: 40px;
+  }
+
+  .filters__button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
 }

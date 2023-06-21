@@ -1,20 +1,26 @@
 .list-item {
-    display: grid;
-    grid-template-columns: repeat(2, 160px) 1fr;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 4fr;
 }
 
 .list-item__cell {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0;
 }
 
 .list-item__no-items-title {
-    text-align: center;
-    padding: 0;
-    margin: 20px 0 0;
-    font-size: 18px;
-    white-space: pre-wrap;
+  text-align: center;
+  padding: 0;
+  margin: 20px 0 0;
+  font-size: 18px;
+  white-space: pre-wrap;
+}
+
+@media screen and (max-width: 750px) {
+  .list-item {
+      gap: 10px;
+  }
 }
