@@ -6,6 +6,7 @@ import monoblockLights from '../../sources/monoblock-lights';
 import buzzers from '../../sources/buzzers';
 import modularSockets from '../../sources/modular-sockets';
 import mcb from '../../sources/mcb';
+import diodeModules from '../../sources/diode-modules';
 
 import Header from '../Header/Header';
 import TablesCards from '../TablesCards/TablesCards';
@@ -25,6 +26,7 @@ function App() {
         <Routes>
           <Route path='/' element={<TablesCards />}/>
           <Route path='/power-supplies' element={<SelectionPage data={powerSupplies} title={'Источники питания'}/>}/>
+          <Route path='/diode-modules' element={<SelectionPage data={diodeModules} title={'Диодные модули резервирования'}/>}/>
           <Route path='/din-rails' element={<SelectionPage data={dinRails} title={'Дин-рейки'}/>}/>
           <Route path='/mpsb' element={<SelectionPage data={mpsb} title={'Автоматы защиты двигателя'}/>}/>
           <Route path='/cable-box' element={<SelectionPage data={cableBox} title={'Кабельные каналы'}/>}/>
@@ -34,7 +36,7 @@ function App() {
           <Route path='/mcb' element={<SelectionPage data={mcb} title={'Модульные автоматические выключатели'}/>}/>
         </Routes>
       </main>
-      
+
       <Footer />
     </>
   );

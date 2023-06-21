@@ -14,6 +14,12 @@ function TablesCards() {
           </Link>
         </li>
         <li className="card__item">
+          <Link className='card__item_link' to='/diode-modules'>
+            <img className='card__item_image' src='https://catalog.weidmueller.com/groups/GR_Power_Extensionmodules_HA_1.jpg;jsessionid=94269D9C16BB86A7E5105EFFC9828EF7'/>
+            <p className='card__item_name'>Диодные модули резервирования</p>
+          </Link>
+        </li>
+        <li className="card__item">
           <Link className='card__item_link' to='/din-rails'>
             <img className='card__item_image' src='https://tahion.spb.ru/wp-content/uploads/2020/09/din-1.png'/>
             <p className='card__item_name'>Дин-рейки</p>
