@@ -16,7 +16,7 @@ function TablesCards() {
     {title: 'Автоматы защиты двигателя',
     link: 'mpsb',
     src: 'https://uploads.chint.com/uploads/product_user/image/file/ac7aec48-c44a-44f4-bc58-2a701993b08e.jpg'},
-    {title: 'Кабельные каналы',
+    {title: 'Перфорированные кабельные каналы',
     link: 'cable-box',
     src: 'https://www.minimaks.ru/upload/iblock/3ba/wuegx7gkfarpbgpqs9x09jx9ufvvhvoy.jpg'},
     {title: 'Световые индикаторы',
@@ -38,8 +38,8 @@ function TablesCards() {
   
   const pages = items.map(item => {
     return(
-      <li className="card__item">
-          <Link className='card__item_link' to={`/${item.link}`}>
+      <li className="card__item" key={item.title}>
+          <Link className='card__item_link' to={`${item.link}`}>
             <img className='card__item_image' alt={item.link} src={item.src}/>
             <p className='card__item_name'>{item.title}</p>
           </Link>
