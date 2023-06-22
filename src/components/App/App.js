@@ -7,6 +7,7 @@ import buzzers from '../../sources/buzzers';
 import modularSockets from '../../sources/modular-sockets';
 import mcb from '../../sources/mcb';
 import diodeModules from '../../sources/diode-modules';
+import modularLoadbreakers from '../../sources/modular-loadbreakers';
 
 import Header from '../Header/Header';
 import TablesCards from '../TablesCards/TablesCards';
@@ -34,6 +35,7 @@ function App() {
           <Route path='/buzzers' element={<SelectionPage data={buzzers} title={'Зуммеры'}/>}/>
           <Route path='/modular-sockets' element={<SelectionPage data={modularSockets} title={'Модульные розетки'}/>}/>
           <Route path='/mcb' element={<SelectionPage data={mcb} title={'Модульные автоматические выключатели'}/>}/>
+          <Route path='/modular-loadbreakers' element={<SelectionPage data={modularLoadbreakers} title={'Модульные выключатели нагрузки'}/>}/>
         </Routes>
       </main>
 
