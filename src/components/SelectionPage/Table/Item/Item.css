@@ -7,9 +7,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   margin: 0;
+  color: black;
 }
+
+/* .list-item__cell */
 
 .list-item__no-items-title {
   text-align: center;

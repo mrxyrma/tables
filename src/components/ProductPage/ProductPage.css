@@ -1,0 +1,12 @@
+.product__title {
+  display: inline;
+}
+
+h2 {
+  display: inline;
+}
+
+.product__image {
+  width: 250px;
+  height: 250px;
+}

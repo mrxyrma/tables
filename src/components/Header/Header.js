@@ -7,7 +7,7 @@ function Header() {
 
   return(
     <header className="header">
-      {location == '/' ?  null :
+      {location === '/' ?  null :
         <div className="container">
           <Link to='/'className='header__link'>Главная</Link>
         </div>

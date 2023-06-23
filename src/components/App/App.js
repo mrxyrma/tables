@@ -3,6 +3,7 @@ import data from '../../sources/data';
 import Header from '../Header/Header';
 import TablesCards from '../TablesCards/TablesCards';
 import SelectionPage from '../SelectionPage/SelectionPage';
+import ProductPage from '../ProductPage/ProductPage';
 import Footer from '../Footer/Footer';
 
 import {Routes, Route} from 'react-router-dom';
@@ -16,6 +17,7 @@ function App() {
 
       <main className='container'>
         <Routes>
+          <Route path="/:tableId/:productId" element={<ProductPage />}/>
           <Route path="/:tableId" element={<SelectionPage data={data}/>}/>
           <Route path='/' element={<TablesCards />}/>
         </Routes>

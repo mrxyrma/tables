@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import Item from './Item/Item';
 
 import './Table.css'
@@ -6,10 +8,9 @@ const Table = ({items}) => {
   const elements = items.map(item => {
     const {id, ...itemProps} = item;
     return(
-      <Item 
-          key={id}
-          {...itemProps}
-      />
+      <Link key={id} to={id}>
+        <Item  {...itemProps}/>
+      </Link>
     )
   });
 
