@@ -1,9 +1,19 @@
 import { useParams } from 'react-router-dom';
-import data from '../../sources/data';
 
 import './ProductPage.css'
+import { useEffect, useState } from 'react';
 function ProductPage() {
   const {tableId, productId} = useParams();
+  const [product, setProduct] = useState([{}]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/${tableId}/${productId}`)
+      .then(res => res.json())
+      .then(data => {
+        setProduct(data)
+        console.log(data)
+      })
+  }, [])
 
   return(
     <div>
@@ -12,8 +22,8 @@ function ProductPage() {
           alt="product"
           className='product__image'/>
       <div className='product__title'>
-        <h2>{`${data[tableId][productId - 1]['Артикул']} `}</h2>
-        <h2>{`${data[tableId][productId - 1]['Наименование']} `}</h2>
+        <h2>{product[0]['Артикул']} </h2>
+        <h2>{product[0]['Наименование']}</h2>
       </div>
       
       <p>Аксессуары:</p>

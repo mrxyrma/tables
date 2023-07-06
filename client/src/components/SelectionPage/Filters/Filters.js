@@ -6,7 +6,7 @@ import './Filters.css'
 function Filters({data, setItems}) {
   let arrayWithFilters = []
   
-  const fieldsetTitles = Object.keys(data[0]).filter(item => !(item === 'id' || item === 'Артикул' || item === 'Наименование'))
+  const fieldsetTitles = Object.keys(data[0]).filter(item => !(item === '_id' || item === 'Артикул' || item === 'Наименование'))
 
   fieldsetTitles.forEach((fieldsetTitle, index) => {
     const obj = {}

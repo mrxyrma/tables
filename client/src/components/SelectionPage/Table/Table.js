@@ -6,10 +6,9 @@ import './Table.css'
 
 const Table = ({items}) => {
   const elements = items.map(item => {
-    const {id, ...itemProps} = item;
     return(
-      <Link key={id} to={id}>
-        <Item  {...itemProps}/>
+      <Link key={item.Артикул} to={item.Артикул}>
+        <Item  {...item}/>
       </Link>
     )
   });
