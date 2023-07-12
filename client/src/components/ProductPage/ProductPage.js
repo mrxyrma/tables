@@ -1,7 +1,9 @@
 import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 import './ProductPage.css'
-import { useEffect, useState } from 'react';
+
+import placeholder from './placeholder.jpg'
 
 function ProductPage() {
   const {tableId, productId} = useParams();
@@ -19,7 +21,7 @@ function ProductPage() {
   const paramsArray = []
 
   for (let key in product[0]) {
-    if (key !== '_id' && key !== 'Артикул' && key !== 'Наименование' && key !== 'Серия')
+    if (key !== '_id' && key !== 'Артикул' && key !== 'Наименование' && key !== 'Серия' && key !== 'src')
     paramsArray.push(`${key}: ${product[0][key]}`)
   }
 
@@ -37,7 +39,7 @@ function ProductPage() {
       <div className='product__info'>
         <img
           className='product__image'
-          src="https://files.keaz.ru/f/38757/obschaya_category.jpg"
+          src={product[0]['src'] ? product[0]['src'] : placeholder}
           alt="product"
           />
         <div>
