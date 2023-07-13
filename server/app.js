@@ -1,11 +1,16 @@
 const express = require('express')
 const cors = require('cors')
+const path = require('path')
 const { MongoClient } = require('mongodb')
 
 const app = express()
 app.use(cors())
+app.use(express.static(path.join(__dirname, '../client/build')))
+
 const uri = 'mongodb+srv://mrxyrma:Nokiasamsung1@tabledb.xe5ensk.mongodb.net/'
 const db = 'tables'
+
+const PORT = process.env.PORT || 5000
 
 const client = new MongoClient(uri)
 
@@ -24,4 +29,4 @@ app.get('/:selectionPage/:productPage', async (req, res) => {
   res.json(data)
 })
 
-app.listen(5000)
+app.listen(PORT)
