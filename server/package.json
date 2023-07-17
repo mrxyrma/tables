@@ -4,7 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "server": "nodemon app.js",
+    "start": "node index.js",
+    "client": "npm run start --prefix client"
   },
   "author": "Andrey Korolev",
   "license": "ISC",

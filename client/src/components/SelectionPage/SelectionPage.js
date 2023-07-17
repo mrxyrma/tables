@@ -26,7 +26,7 @@ function SelectionPage() {
   const ref = useRef([{}])
 
   useEffect(() => {
-    fetch(`http://localhost:5000/${tableId}`)
+    fetch(`http://192.168.102.211:5000/${tableId}`)
       .then(res => res.json())
       .then(data => {
         setItems(data)
