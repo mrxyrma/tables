@@ -10,7 +10,7 @@ function ProductPage() {
   const [product, setProduct] = useState([{}]);
 
   useEffect(() => {
-    fetch(`http://192.168.102.211:5000/${tableId}/${productId}`)
+    fetch(`http://192.168.102.211/${tableId}/${productId}`)
       .then(res => res.json())
       .then(data => {
         setProduct(data)

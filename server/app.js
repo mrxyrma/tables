@@ -3,15 +3,15 @@ const cors = require('cors')
 const path = require('path')
 const { MongoClient } = require('mongodb')
 
+const PORT = process.env.PORT || 80
+const uri = 'mongodb://192.168.102.211:27017'
+const db = 'tables'
+
 const app = express()
-const PORT = process.env.PORT || 5000
 const client = new MongoClient(uri)
 
 app.use(cors())
-app.use('/', express.static(path.join(__dirname, './client/build')))
-
-const uri = 'mongodb+srv://mrxyrma:Nokiasamsung1@tabledb.xe5ensk.mongodb.net/'
-const db = 'tables'
+app.use('/', express.static(path.join(__dirname, '../client/build')))
 
 app.get('/:selectionPage', async (req, res) => {
   await client.connect()
