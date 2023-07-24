@@ -24,7 +24,7 @@ function TablesCards() {
     src: 'https://files.keaz.ru/f/5532/ad-22-ds-dlya-sayta_big.jpg'},
     {title: 'Зуммеры',
     link: 'buzzers',
-    src: 'https://chint-electric.ru/image/cache/data/indicator/ND16-Buzzer-red-280x280.jpg'},
+    src: 'https://chint.ru/upload/iblock/467/lipgjnmxzycjhcxkutg0ihoyevi1yru5/nd16-black.jpg'},
     {title: 'Модульные розетки',
     link: 'modular-sockets',
     src: 'https://elmir-anapa.ru/images/i/11000/11650/b1.png'},

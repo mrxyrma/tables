@@ -25,9 +25,9 @@ function ProductPage() {
     paramsArray.push(`${key}: ${product[0][key]}`)
   }
 
-  const view = paramsArray.map(item => {
+  const view = paramsArray.map((item, index) => {
     return(
-      <p className='product__param'>{item}</p>
+      <p key={paramsArray[index]} className='product__param'>{item}</p>
     )
   })
 

@@ -5,10 +5,10 @@ import Item from './Item/Item';
 import './Table.css'
 
 const Table = ({items}) => {
-  const elements = items.map(item => {
+  const elements = items.map((item, index) => {
     return(
-      <Link key={item.Артикул} to={item.Артикул}>
-        <Item  {...item}/>
+      <Link key={index} to={item.Артикул}>
+        <Item {...item}/>
       </Link>
     )
   });
