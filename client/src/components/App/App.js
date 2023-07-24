@@ -15,9 +15,9 @@ function App() {
 
       <main className='container'>
         <Routes>
-          <Route path="192.168.102.211/:tableId/:productId" element={<ProductPage />}/>
-          <Route path="192.168.102.211/:tableId" element={<SelectionPage />}/>
-          <Route path='192.168.102.211' element={<TablesCards />}/>
+          <Route path="/:tableId/:productId" element={<ProductPage />}/>
+          <Route path="/:tableId" element={<SelectionPage />}/>
+          <Route path='/' element={<TablesCards />}/>
         </Routes>
       </main>
 
