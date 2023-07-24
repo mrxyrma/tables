@@ -10,16 +10,16 @@ const app = express()
 const client = new MongoClient(uri)
 
 app.use(cors())
-app.use('/', express.static(path.join(__dirname, '../client/build')))
+app.use(express.static(path.join(__dirname, '../client/build')))
 
-app.get('/:selectionPage', async (req, res) => {
+app.get('/api/:selectionPage', async (req, res) => {
   await client.connect()
   const data = await client.db('tables').collection(req.params.selectionPage).find().toArray()
   client.close()
   res.json(data)
 })
 
-app.get('/:selectionPage/:productPage', async (req, res) => {
+app.get('/api/:selectionPage/:productPage', async (req, res) => {
   const data = []
   
   await client.connect()
@@ -34,5 +34,9 @@ app.get('/:selectionPage/:productPage', async (req, res) => {
 
   res.json(data)
 })
+
+app.use('*',  (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+});
 
 app.listen(PORT)
