@@ -32,7 +32,7 @@ function SelectionPage() {
         setItems(data)
         ref.current = data
       })
-  }, [])
+  }, [tableId])
 
   return(
     <>

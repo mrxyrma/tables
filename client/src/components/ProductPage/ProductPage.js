@@ -15,7 +15,7 @@ function ProductPage() {
       .then(data => {
         setProduct(data)
       })
-  }, [])
+  }, [tableId, productId])
 
  const params = () => {
   const paramsArray = []
