@@ -1,5 +1,6 @@
 import Filters from './Filters/Filters';
 import Table from './Table/Table';
+import { serverIp } from '../../config/config';
 
 import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
@@ -26,7 +27,7 @@ function SelectionPage() {
   const ref = useRef([{}])
 
   useEffect(() => {
-    fetch(`http://192.168.102.211/${tableId}`)
+    fetch(`${serverIp}/${tableId}`)
       .then(res => res.json())
       .then(data => {
         setItems(data)

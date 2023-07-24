@@ -5,7 +5,6 @@ const { MongoClient } = require('mongodb')
 
 const PORT = process.env.PORT || 80
 const uri = 'mongodb://localhost:27017'
-const db = 'tables'
 
 const app = express()
 const client = new MongoClient(uri)
@@ -15,16 +14,24 @@ app.use('/', express.static(path.join(__dirname, '../client/build')))
 
 app.get('/:selectionPage', async (req, res) => {
   await client.connect()
-  const data = await client.db(db).collection(req.params.selectionPage).find().toArray()
+  const data = await client.db('tables').collection(req.params.selectionPage).find().toArray()
   client.close()
   res.json(data)
 })
 
 app.get('/:selectionPage/:productPage', async (req, res) => {
-  console.log(req.params.productPage)
+  const data = []
+  
   await client.connect()
-  const data = await client.db(db).collection(req.params.selectionPage).find({Артикул: req.params.productPage}).toArray()
+
+  const productInfo = await client.db('tables').collection(req.params.selectionPage).find({Артикул: req.params.productPage}).toArray()
+
+  const accessoriesInfo = await client.db('accessories').collection(req.params.selectionPage).find({Серия: productInfo[0].Серия}).toArray()
+
   client.close()
+
+  data.push(productInfo[0], accessoriesInfo)
+
   res.json(data)
 })
 
