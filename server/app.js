@@ -4,7 +4,7 @@ const path = require('path')
 const { MongoClient } = require('mongodb')
 
 const PORT = process.env.PORT || 80
-const uri = 'mongodb://localhost:27017'
+const uri = 'mongodb://192.168.102.211:27017'
 
 const app = express()
 const client = new MongoClient(uri)

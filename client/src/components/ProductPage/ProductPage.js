@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { serverIp } from '../../config/config';
+import callBackendAPI from '../../services/callBackendAPI';
 
 import ProductInfo from './ProductInfo/ProductInfo';
 import Accessories from './Accessories/Accessories';
@@ -12,12 +12,9 @@ function ProductPage() {
   const [data, setData] = useState([{}]);
 
   useEffect(() => {
-    fetch(`${serverIp}/${tableId}/${productId}`)
-      .then(res => res.json())
-      .then(data => {
-        setData(data)
-      })
-  }, [tableId, productId])
+    callBackendAPI(`${tableId}/${productId}`)
+      .then(data => setData(data))
+  }, [])
 
   return(
     <div className='product'>

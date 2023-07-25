@@ -1,6 +1,6 @@
 import Filters from './Filters/Filters';
 import Table from './Table/Table';
-import { serverIp } from '../../config/config';
+import callBackendAPI from '../../services/callBackendAPI';
 
 import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
@@ -27,13 +27,13 @@ function SelectionPage() {
   const ref = useRef([{}])
 
   useEffect(() => {
-    fetch(`${serverIp}/${tableId}`)
-      .then(res => res.json())
+    callBackendAPI(tableId)
       .then(data => {
         setItems(data)
         ref.current = data
       })
-  }, [tableId])
+      .catch(err => console.log(err));
+  }, [])
 
   return(
     <>
