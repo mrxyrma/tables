@@ -15,7 +15,7 @@ function ProductPage() {
   const {loading, request, error} = useCallBackendAPI()
 
   useEffect(() => {
-    request(`${tableId}/${productId}`)
+    request(`/${tableId}/${productId}`)
       .then(data => setData(data))
   }, [])
 

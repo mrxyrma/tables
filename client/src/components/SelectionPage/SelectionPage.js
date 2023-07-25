@@ -13,29 +13,18 @@ function SelectionPage() {
   const {tableId} = useParams()
   const {loading, request, error} = useCallBackendAPI()
 
-  const titles = {
-    'power-supplies': 'Источники питания',
-    'diode-modules': 'Диодные модули резервирования',
-    'din-rails': 'Дин-рейки',
-    'mpsb': 'Автоматы защиты двигателя',
-    'cable-box': 'Перфорированные кабельные каналы',
-    'monoblock-lights': 'Световые индикаторы',
-    'buzzers': 'Зуммеры',
-    'modular-sockets': 'Модульные розетки',
-    'mcb': 'Модульные автоматические выключатели',
-    'modular-loadbreakers': 'Модульные выключатели нагрузки'
-  }
-
   const [items, setItems] = useState([{}])
   const ref = useRef()
+  const title = useRef()
 
   useEffect(() => {
-    request(tableId)
+    request(`/${tableId}`)
       .then(data => {
-        setItems(data)
-        ref.current = data
+        setItems(data[0])
+        ref.current = data[0]
+        title.current = data[1][0].title
       })
-      .catch(err => console.log(err));
+      .catch(err => console.log(err))
   }, [])
 
   const spinner = loading ? <Spinner /> : null
@@ -44,7 +33,7 @@ function SelectionPage() {
 
   return(
     <>
-      <h1 className='title'>{titles[tableId]}</h1>
+      <h1 className='title'>{title.current}</h1>
       {spinner}
       {errorImage}
       {content}

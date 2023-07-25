@@ -12,10 +12,25 @@ const client = new MongoClient(uri)
 app.use(cors())
 app.use(express.static(path.join(__dirname, '../client/build')))
 
-app.get('/api/:selectionPage', async (req, res) => {
+app.get('/api', async (req, res) => {
   await client.connect()
-  const data = await client.db('tables').collection(req.params.selectionPage).find().toArray()
+  const data = await client.db('tables').collection('product-cards').find().toArray()
   client.close()
+  res.json(data)
+})
+
+app.get('/api/:selectionPage', async (req, res) => {
+  const data = []
+
+  await client.connect()
+
+  const table = await client.db('tables').collection(req.params.selectionPage).find().toArray()
+  const title = await client.db('tables').collection('product-cards').find({link: req.params.selectionPage}).toArray()
+
+  client.close()
+
+  data.push(table, title)
+
   res.json(data)
 })
 
