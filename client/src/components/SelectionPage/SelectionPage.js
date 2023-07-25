@@ -1,15 +1,18 @@
-import Filters from './Filters/Filters';
-import Table from './Table/Table';
-import callBackendAPI from '../../services/callBackendAPI';
+import Filters from './Filters/Filters'
+import Table from './Table/Table'
+import Spinner from '../Spinner/Spinner'
+import Error from '../Error/Error'
 
-import { useState, useEffect, useRef } from 'react';
-import { useParams } from 'react-router-dom';
+import useCallBackendAPI from '../../services/useCallBackendAPI'
+import { useState, useEffect, useRef } from 'react'
+import { useParams } from 'react-router-dom'
 
-import './SelectionPage.css';
+import './SelectionPage.css'
 
 function SelectionPage() {
-  const {tableId} = useParams();
-  
+  const {tableId} = useParams()
+  const {loading, request, error} = useCallBackendAPI()
+
   const titles = {
     'power-supplies': 'Источники питания',
     'diode-modules': 'Диодные модули резервирования',
@@ -24,10 +27,10 @@ function SelectionPage() {
   }
 
   const [items, setItems] = useState([{}])
-  const ref = useRef([{}])
+  const ref = useRef()
 
   useEffect(() => {
-    callBackendAPI(tableId)
+    request(tableId)
       .then(data => {
         setItems(data)
         ref.current = data
@@ -35,15 +38,27 @@ function SelectionPage() {
       .catch(err => console.log(err));
   }, [])
 
+  const spinner = loading ? <Spinner /> : null
+  const errorImage = error ? <Error /> : null
+  const content = !(loading || error || !ref.current) ? <Content data={ref.current} items={items} setItems={setItems} /> : null
+
   return(
     <>
       <h1 className='title'>{titles[tableId]}</h1>
-      <div className="table-page__content">
-        <Filters data={ref.current} setItems={setItems}/>
-        <Table items={items}/>
-      </div>
+      {spinner}
+      {errorImage}
+      {content}
     </>
   )
 }
 
-export default SelectionPage;
+export default SelectionPage
+
+const Content = ({data, items, setItems}) => {
+  return(
+    <div className="table-page__content">
+      <Filters data={data} setItems={setItems}/>
+      <Table items={items}/>
+    </div>
+  )
+}

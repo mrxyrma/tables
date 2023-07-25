@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-import Item from './Item/Item';
+import Item from './Item/Item'
 
 import './Table.css'
 
@@ -11,7 +11,7 @@ const Table = ({items}) => {
         <Item {...item}/>
       </Link>
     )
-  });
+  })
 
   return(
     <ul className="table">
@@ -23,7 +23,8 @@ const Table = ({items}) => {
       {items.length
         ? elements
         : <p className='list-item__no-items-title'>Изделий с выбранными характеристиками нет<br/>Попробуйте изменить критерии поиска</p>}
-  </ul>
+    </ul>
   )
 }
+
 export default Table;
