@@ -17,7 +17,7 @@ function ProductPage() {
   useEffect(() => {
     request(`/${tableId}/${productId}`)
       .then(data => setData(data))
-  }, [])
+  }, [tableId, productId, request])
 
   const spinner = loading ? <Spinner /> : null
   const errorImage = error ? <Error /> : null

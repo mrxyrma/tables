@@ -25,7 +25,7 @@ function SelectionPage() {
         title.current = data[1][0].title
       })
       .catch(err => console.log(err))
-  }, [])
+  }, [request, tableId])
 
   const spinner = loading ? <Spinner /> : null
   const errorImage = error ? <Error /> : null

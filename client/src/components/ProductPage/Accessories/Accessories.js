@@ -6,14 +6,15 @@ function Accessories({data}) {
     else {
       const accessories = data.map(item => {
         return(
-          <p key={item['Артикул']}>{item['Артикул']} {item['Наименование']}</p>
+          <p key={item['Артикул']} className='product__param'>{item['Артикул']} {item['Наименование']}</p>
         )
       })
+      
       return(
-        <>
+        <div>
           <p className='product__subtitle'>Принадлежности:</p>
           {accessories}
-        </> 
+        </div> 
       )
     }
   }
