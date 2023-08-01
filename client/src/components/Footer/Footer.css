@@ -23,3 +23,11 @@
   color: white;
   opacity: .7;
 }
+
+@media screen and (max-width: 750px) {
+  .footer__elements {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    text-align: center;
+  }
+}
