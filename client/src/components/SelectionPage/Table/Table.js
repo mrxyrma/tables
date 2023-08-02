@@ -8,7 +8,7 @@ const Table = ({items}) => {
   const elements = items.map((item, index) => {
     return(
       <Link key={index} to={item.Артикул}>
-        <Item {...item}/>
+        <Item orderNum = {item['Артикул']} name={item['Наименование']}/>
       </Link>
     )
   })
@@ -16,7 +16,6 @@ const Table = ({items}) => {
   return(
     <ul className="table">
       <li className='list-item'>
-        <p className='list-item__cell subtitle'>Бренд</p>
         <p className='list-item__cell subtitle'>Артикул</p>
         <p className='list-item__cell subtitle'>Наименование</p>
       </li>

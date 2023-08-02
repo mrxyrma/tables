@@ -17,6 +17,7 @@
 
 .footer__copy {
   color: white;
+  text-align: end;
 }
 
 .footer__copy:hover {
@@ -26,8 +27,13 @@
 
 @media screen and (max-width: 750px) {
   .footer__elements {
+    margin: 5px 0;
     grid-template-columns: 1fr;
     row-gap: 10px;
+    text-align: center;
+  }
+
+  .footer__copy {
     text-align: center;
   }
 }

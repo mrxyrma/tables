@@ -1,12 +1,11 @@
 import './Item.css'
 
-function Item(props) {
+function Item({orderNum, name}) {
 
   return(
     <li className='list-item'>
-      <p className='list-item__cell'>{props['Бренд']}</p>
-      <p className='list-item__cell'>{props['Артикул']}</p>
-      <p className='list-item__cell'>{props['Наименование']}</p>
+      <p className='list-item__cell'>{orderNum}</p>
+      <p className='list-item__cell'>{name}</p>
     </li>
   )
 }
