@@ -1,27 +1,3 @@
-.list-item {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 150px 1fr;
-  margin-top: 20px;
-}
-
-.list-item__cell {
-  margin: 0;
-  padding: 0;
-  color: black;
-  text-align: center;
-}
-
-.list-item__no-items-title {
-  text-align: center;
-  padding: 0;
-  margin: 20px 0 0;
-  font-size: 18px;
-}
-
-@media screen and (max-width: 360px) {
-  .list-item {
-    font-size: 14px;
-    grid-template-columns: 130px 1fr;
-  }
+.list-item__link {
+  color:black;
 }
