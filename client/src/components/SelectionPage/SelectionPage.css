@@ -5,6 +5,7 @@
 .subtitle {
   font-size: 18px;
   font-weight: bold;
+  margin: 15px 0;
 }
 
 @media screen and (max-width: 750px) {

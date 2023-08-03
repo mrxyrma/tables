@@ -15,9 +15,9 @@ const Table = ({items}) => {
 
   return(
     <ul className="table">
-      <li className='list-item'>
-        <p className='list-item__cell subtitle'>Артикул</p>
-        <p className='list-item__cell subtitle'>Наименование</p>
+      <li className='list-item subtitle'>
+        <p className='list-item__cell'>Артикул</p>
+        <p className='list-item__cell'>Наименование</p>
       </li>
       {items.length
         ? elements

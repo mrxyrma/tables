@@ -15,9 +15,3 @@ a:hover {
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;
 }
-
-@media screen and (max-width: 750px) {
-  .container {
-    width: 95%;
-  }
-}

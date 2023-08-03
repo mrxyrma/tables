@@ -1,13 +1,15 @@
 .filters {
   height: 100%;
-  position: relative;
 }
 
 .filters__button {
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  margin-top: 15px;
+  border-radius: 7px;
+  padding: 15px 30px;
+  width: 100%;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
   background-color: #1B64A1;
   color:white;
 }
@@ -19,16 +21,6 @@
 @media screen and (max-width: 750px) {
   .filters {
     width: 100%;
-    margin-bottom: 15px;
-  }
-
-  .filter:last-child {
-    padding-bottom: 40px;
-  }
-
-  .filters__button {
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    margin-bottom: 20px;
   }
 }

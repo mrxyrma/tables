@@ -1,13 +1,11 @@
 .list-item {
   display: grid;
+  align-items: center;
   grid-template-columns: 150px 1fr;
   margin-top: 20px;
 }
 
 .list-item__cell {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 0;
   padding: 0;
   color: black;

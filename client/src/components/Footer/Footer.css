@@ -10,9 +10,11 @@
 
 .footer__elements {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  column-gap: 20px;
+  grid-template-columns: 1fr 190px;
+  column-gap: 5px;
   justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
 }
 
 .footer__copy {
@@ -25,12 +27,13 @@
   opacity: .7;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1010px) {
   .footer__elements {
-    margin: 5px 0;
+    margin: 10px 0;
     grid-template-columns: 1fr;
     row-gap: 10px;
     text-align: center;
+    font-size: 12px;
   }
 
   .footer__copy {
