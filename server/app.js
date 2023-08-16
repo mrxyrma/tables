@@ -3,7 +3,8 @@ const cors = require('cors')
 const path = require('path')
 const { MongoClient } = require('mongodb')
 
-const PORT = process.env.PORT || 80
+// const PORT = process.env.PORT || 
+const PORT = 5000
 const uri = 'mongodb://192.168.102.211:27017'
 
 const app = express()
@@ -39,7 +40,11 @@ app.get('/api/:selectionPage/:productPage', async (req, res) => {
   
   await client.connect()
 
-  const productInfo = await client.db('tables').collection(req.params.selectionPage).find({Артикул: req.params.productPage}).toArray()
+  let productInfo = await client.db('tables').collection(req.params.selectionPage).find({Артикул: req.params.productPage}).toArray()
+
+  if (productInfo.length == 0) {
+    productInfo = await client.db('tables').collection(req.params.selectionPage).find({Артикул: Number(req.params.productPage)}).toArray()
+  }
 
   const accessoriesInfo = await client.db('accessories').collection(req.params.selectionPage).find({Серия: productInfo[0].Серия}).toArray()
 

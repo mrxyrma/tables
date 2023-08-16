@@ -4,8 +4,15 @@ import './Fieldset.css';
 
 function Fieldset({title, data, getSelectedBtns}) {
   const filterButtons = Array.from(new Set(data.map(item => item[`${title}`])))
+      // .sort((a, b) => a - b)
+      // .map(label => <FilterButton key={label} label={label}/>)
+  if(filterButtons.every(item => typeof(item) === 'string')) {
+    filterButtons
       .sort((a, b) => a - b)
-      .map(label => <FilterButton key={label} label={label}/>);
+      .map(label => <FilterButton key={label} label={label}/>)
+  } else {
+    filterButtons.sort().map(label => <FilterButton key={label} label={label}/>)
+  }
   
   function takeSelectedBtns(e){
     let selectedBtns = Array.from(e.currentTarget.elements).filter(item => item.checked).map(item => item.value)

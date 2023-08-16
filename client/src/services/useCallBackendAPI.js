@@ -4,7 +4,8 @@ const useCallBackendAPI = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
-  const serverIp = 'http://192.168.102.211/api'
+  // const serverIp = 'http://192.168.102.211/api'
+  const serverIp = 'http://localhost:5000/api'
   
   const request = useCallback(async (path, method = 'GET', body = null, headers = {'Content-Type': 'application/json'}) => {
     setLoading(true)
