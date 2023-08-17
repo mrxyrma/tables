@@ -41,9 +41,9 @@ app.get('/api/:selectionPage/:productPage', async (req, res) => {
 
   let productInfo = await client.db('tables').collection(req.params.selectionPage).find({Артикул: req.params.productPage}).toArray()
 
-  if (productInfo.length == 0) {
-    productInfo = await client.db('tables').collection(req.params.selectionPage).find({Артикул: Number(req.params.productPage)}).toArray()
-  }
+  // if (productInfo.length == 0) {
+  //   productInfo = await client.db('tables').collection(req.params.selectionPage).find({Артикул: Number(req.params.productPage)}).toArray()
+  // }
 
   const accessoriesInfo = await client.db('accessories').collection(req.params.selectionPage).find({Серия: productInfo[0].Серия}).toArray()
 
