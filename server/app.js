@@ -3,8 +3,7 @@ const cors = require('cors')
 const path = require('path')
 const { MongoClient } = require('mongodb')
 
-// const PORT = process.env.PORT || 
-const PORT = 5000
+const PORT = process.env.PORT || 80
 const uri = 'mongodb://192.168.102.211:27017'
 
 const app = express()

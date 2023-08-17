@@ -3,15 +3,13 @@ import FilterButton from './FilterButton/FilterButton';
 import './Fieldset.css';
 
 function Fieldset({title, data, getSelectedBtns}) {
-  const filterButtons = Array.from(new Set(data.map(item => item[`${title}`])))
-      // .sort((a, b) => a - b)
-      // .map(label => <FilterButton key={label} label={label}/>)
-  if(filterButtons.every(item => typeof(item) === 'string')) {
-    filterButtons
-      .sort((a, b) => a - b)
-      .map(label => <FilterButton key={label} label={label}/>)
+  const arrWithValues = Array.from(new Set(data.map(item => item[`${title}`])))
+  
+  let filterButtons
+  if (arrWithValues.every(item => typeof(item) === 'string')) {
+    filterButtons = arrWithValues.sort().map(label => <FilterButton key={label} label={label}/>)
   } else {
-    filterButtons.sort().map(label => <FilterButton key={label} label={label}/>)
+    filterButtons = arrWithValues.sort((a, b) => a - b).map(label => <FilterButton key={label} label={label}/>)
   }
   
   function takeSelectedBtns(e){
