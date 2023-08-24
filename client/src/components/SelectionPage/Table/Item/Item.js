@@ -5,7 +5,7 @@ import './Item.css'
 function Item({orderNum, name}) {
 
   return(
-    <Link to={orderNum} className='list-item__link'>{orderNum} - {name}</Link>
+    <Link to={String(orderNum)} target='_blank' className='list-item__link'>{orderNum} - {name}</Link>
   )
 }
 

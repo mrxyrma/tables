@@ -33,7 +33,8 @@ function Filters({data, setItems}) {
 
     const filteredItems = data.filter(item => {
     
-      const arrWithValues = [] //массив со значеними отдельного item
+      const arrWithValues = [] //массив со значеними каждой отдельной позиции из таблицы
+
       fieldsetTitles.forEach(fieldsetTitle => {
         arrWithValues.push(item[fieldsetTitle])
       })

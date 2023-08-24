@@ -6,7 +6,7 @@ const Table = ({items}) => {
   const elements = items.map((item, index) => {
     return(
       <li key={index} className='list-item'>
-        <Item orderNum = {String(item['Артикул'])} name={item['Наименование']}/>
+        <Item orderNum = {item['Артикул']} name={item['Наименование']}/>
       </li>
     )
   })
