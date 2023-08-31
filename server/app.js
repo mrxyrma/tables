@@ -25,11 +25,10 @@ app.get('/api/:selectionPage', async (req, res) => {
   await client.connect()
 
   const table = await client.db('tables').collection(req.params.selectionPage).find().toArray()
-  const title = await client.db('tables').collection('product-cards').find({link: req.params.selectionPage}).toArray()
-
+  const productCard = await client.db('tables').collection('product-cards').findOne({link: req.params.selectionPage})
   client.close()
 
-  data.push(table, title)
+  data.push(productCard.title, table)
 
   res.json(data)
 })

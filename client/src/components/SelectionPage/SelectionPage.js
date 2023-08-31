@@ -20,9 +20,9 @@ function SelectionPage() {
   useEffect(() => {
     request(`/${tableId}`)
       .then(data => {
-        setItems(data[0])
-        ref.current = data[0]
-        title.current = data[1][0].title
+        title.current = data[0] //Заголовок страницы (название таблицы)
+        setItems(data[1]) //Данные из таблицы
+        ref.current = data[1]
       })
       .catch(err => console.log(err))
   }, [request, tableId])

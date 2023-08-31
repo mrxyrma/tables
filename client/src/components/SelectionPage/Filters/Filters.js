@@ -4,13 +4,13 @@ import Fieldset from './Fieldset/Fieldset';
 import './Filters.css'
 
 function Filters({data, setItems}) {
-  let arrayWithFilters = []
-  const ignoreTitles = ['_id', 'Артикул', 'Наименование', 'src', 'Серия', 'Примечание']
-  const fieldsetTitles = Object.keys(data[0]).filter(item => !ignoreTitles.includes(item))
+  const ignoreTitles = ['_id', 'Артикул', 'Наименование', 'src', 'Серия', 'Примечание'] //Список полей таблицы, которые игнорируются в филдсетах
+  const fieldsetTitles = Object.keys(data[0]).filter(item => !ignoreTitles.includes(item)) //Массив с заголовками филдсетов (шапка таблицы)
 
+  let arrayWithFilters = [] //Каждый элемент - это объект, где ключ - название филдсета, а значение - массив с уникальными значениями
   fieldsetTitles.forEach((fieldsetTitle, index) => {
     const obj = {}
-    obj[fieldsetTitle] = Array.from(new Set(data.map(item => item[`${fieldsetTitle}`])))
+    obj[fieldsetTitle] = Array.from(new Set(data.map(item => item[`${fieldsetTitle}`]))) //Объект с филдсетами в формате {Бренд: [КЭАЗ, Lovato...]} 
     arrayWithFilters[index] = obj
   })
 
@@ -19,11 +19,11 @@ function Filters({data, setItems}) {
     arrayWithFilters[index] = objectWithFieldset
   }
 
-  const fieldsets = fieldsetTitles.map(fieldsetTitle =>
+  const fieldsets = fieldsetTitles.map((fieldsetTitle, index) =>
       <Fieldset
         key={fieldsetTitle}
         title={fieldsetTitle}
-        data={data}
+        values={arrayWithFilters[index][fieldsetTitle]}
         getSelectedBtns={getSelectedBtns}
       />
   )
