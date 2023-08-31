@@ -16,7 +16,9 @@ function TablesCards() {
     request('/')
     .then(data => setCards(data))
     .catch(err => console.log(err))
-  }, [])
+
+    document.title = 'Таблицы'
+  }, [request])
   
   const tables = cards.map(item => {
     return(

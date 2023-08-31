@@ -27,6 +27,12 @@ function SelectionPage() {
       .catch(err => console.log(err))
   }, [request, tableId])
 
+  useEffect(()=>{
+    if (title.current !== undefined) {
+      document.title = title.current
+    }
+  })
+
   const spinner = loading ? <Spinner /> : null
   const errorImage = error ? <Error /> : null
   const content = !(loading || error || !ref.current) ? <Content data={ref.current} items={items} setItems={setItems} /> : null

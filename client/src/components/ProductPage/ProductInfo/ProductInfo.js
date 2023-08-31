@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import ProductModal from './ProductModal/ProductModal'
 
@@ -9,6 +9,10 @@ function ProductInfo({data}) {
   const [modalActive, setModalActive] = useState(false)
   const image = data['src'] ? data['src'] : placeholder
   
+  useEffect(() => {
+    document.title = `${data.Артикул} - ${data.Наименование}`
+  },[data.Артикул, data.Наименование])
+
   for (let key in data) {
     if (key !== '_id' && key !== 'Артикул' && key !== 'Наименование' && key !== 'Серия' && key !== 'src') {
       paramsArray.push(`${key}: ${data[key]}`)
