@@ -1,0 +1,13 @@
+.search {
+  display: flex;
+  justify-content: center;
+}
+.search_input {
+  height: 40px;
+  padding: 0;
+  width: 85%;
+  margin: 10px 0;
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}

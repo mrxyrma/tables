@@ -1,5 +1,6 @@
 import Filters from './Filters/Filters'
 import Table from './Table/Table'
+import Search from './Search/Search'
 import Spinner from '../Spinner/Spinner'
 import Error from '../Error/Error'
 
@@ -39,6 +40,7 @@ function SelectionPage() {
 
   return(
     <>
+      <Search data={ref.current} setItems={setItems}/>
       <h1 className='title'>{title.current}</h1>
       {spinner}
       {errorImage}
