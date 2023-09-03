@@ -10,4 +10,16 @@
   text-align: center;
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
+  border: .75px rgb(238, 238, 238) solid;
+  border-bottom: 1px rgb(200, 200, 200) solid;
+  border-radius: 5px;
+}
+
+.search_input::placeholder {
+  color: rgb(150, 150, 150);
+}
+
+.search_input:focus {
+  outline: 0;
+  outline-offset: 0;
 }
