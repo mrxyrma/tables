@@ -3,7 +3,7 @@ import Fieldset from './Fieldset/Fieldset';
 
 import './Filters.css'
 
-function Filters({data, setItems}) {
+function Filters({data, setItems, setInputValue}) {
   const ignoreTitles = ['_id', 'Артикул', 'Наименование', 'src', 'Серия', 'Примечание'] //Список полей таблицы, которые игнорируются в филдсетах
   const fieldsetTitles = Object.keys(data[0]).filter(item => !ignoreTitles.includes(item)) //Массив с заголовками филдсетов (шапка таблицы)
 
@@ -42,6 +42,7 @@ function Filters({data, setItems}) {
       return arrWithValues.every((arrItem, index) => arrayWithFilters[index][Object.keys(arrayWithFilters[index])[0]].includes(arrItem))
 
     })
+    setInputValue('')
     setItems(filteredItems)
     document.querySelector('.table').scrollIntoView({behavior: 'smooth', block: 'start'})
   }

@@ -15,6 +15,7 @@ function SelectionPage() {
   const {loading, request, error} = useCallBackendAPI()
 
   const [items, setItems] = useState([{}])
+  const [inputValue, setInputValue] = useState('')
   const ref = useRef()
   const title = useRef()
 
@@ -36,11 +37,11 @@ function SelectionPage() {
 
   const spinner = loading ? <Spinner /> : null
   const errorImage = error ? <Error /> : null
-  const content = !(loading || error || !ref.current) ? <Content data={ref.current} items={items} setItems={setItems} /> : null
+  const content = !(loading || error || !ref.current) ? <Content data={ref.current} items={items} setItems={setItems} setInputValue={setInputValue}/> : null
 
   return(
     <>
-      <Search data={ref.current} setItems={setItems}/>
+      <Search data={ref.current} setItems={setItems} inputValue={inputValue} setInputValue={setInputValue}/>
       <h1 className='title'>{title.current}</h1>
       {spinner}
       {errorImage}
@@ -51,10 +52,10 @@ function SelectionPage() {
 
 export default SelectionPage
 
-const Content = ({data, items, setItems}) => {
+const Content = ({data, items, setItems, setInputValue}) => {
   return(
     <div className="table-page__content">
-      <Filters data={data} setItems={setItems}/>
+      <Filters data={data} setItems={setItems} setInputValue={setInputValue}/>
       <Table items={items}/>
     </div>
   )
