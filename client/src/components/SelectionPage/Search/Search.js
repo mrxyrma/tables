@@ -1,16 +1,26 @@
-import './Search.css'
+import "./Search.css"
 
-function Search({data, setItems, inputValue, setInputValue}) {
+function Search({ data, setItems, inputValue, setInputValue }) {
   const searching = (e) => {
-    document.querySelectorAll('input:checked').forEach(item => item.checked = false)
+    document
+      .querySelectorAll("input:checked")
+      .forEach((item) => (item.checked = false))
     setInputValue(e.target.value)
-    const foundItems = data.filter(item => (String(item.Артикул).toUpperCase().includes(inputValue) || String(item.Наименование).toUpperCase().includes(e.target.value.toUpperCase())))
+    const foundItems = data.filter(
+      (item) =>
+        String(item.Артикул)
+          .toUpperCase()
+          .includes(e.target.value.toUpperCase()) ||
+        String(item.Наименование)
+          .toUpperCase()
+          .includes(e.target.value.toUpperCase())
+    )
     setItems(foundItems)
   }
 
-  return(
+  return (
     <div className='search'>
-      <input 
+      <input
         className='search_input'
         type='input'
         placeholder='Поиск по артикулу или наименованию'
@@ -18,7 +28,6 @@ function Search({data, setItems, inputValue, setInputValue}) {
         value={inputValue}
       />
     </div>
-    
   )
 }
 
