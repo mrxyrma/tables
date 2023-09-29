@@ -44,11 +44,30 @@ app.get('/api/:selectionPage/:productPage', async (req, res) => {
     productInfo = await client.db('tables').collection(req.params.selectionPage).find({Артикул: Number(req.params.productPage)}).toArray()
   }
 
-  const accessoriesInfo = await client.db('accessories').collection(req.params.selectionPage).find({Серия: productInfo[0].Серия}).toArray()
+  const arrWithParams = productInfo[0].Серия.split(', ') //Массив, состоящий из параметров для поиска аксессуаров
+  const tempArr = [] //Массив с повторяющимися значениями аксессуаров
+  await Promise.all(arrWithParams.map(async param => {
+    const arrWithAccessories = await client.db('accessories').collection(req.params.selectionPage).find({Серия: param}).toArray()
+    arrWithAccessories.forEach(i => tempArr.push(i))
+    return [] //Возвращаю итеррируемый объект, чтобы работал Promise.all
+  }))
 
+  const pureArrWithAccessories = tempArr.reduce((acc, item) => {
+    if (acc.map[item.Артикул]) // если данный аксессуар уже был
+      return acc // ничего не делаем, возвращаем уже собранное
+
+      acc.map[item.Артикул] = true // помечаем аксессуар, как обработанный
+      acc.unicAccessories.push(item) // добавляем объект в массив аксессуаров
+      return acc // возвращаем собранное
+    },
+    {
+      map: {}, // здесь будут отмечаться обработанные аксессуары
+      unicAccessories: [] // здесь конечный массив уникальных аксессуаров
+    }).unicAccessories // получаем конечный массив
+  
   client.close()
 
-  data.push(productInfo[0], accessoriesInfo)
+  data.push(productInfo[0], pureArrWithAccessories)
 
   res.json(data)
 })
@@ -57,4 +76,4 @@ app.use('*',  (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
 
-app.listen(PORT)
+app.listen(5000)

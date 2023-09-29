@@ -22,5 +22,4 @@ function Accessories({data}) {
     }
   }
 }
-
 export default Accessories
