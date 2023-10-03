@@ -1,6 +1,6 @@
-import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import useCallBackendAPI from '../../services/useCallBackendAPI';
+import { useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import useCallBackendAPI from '../../services/useCallBackendAPI'
 
 import ProductInfo from './ProductInfo/ProductInfo'
 import Accessories from './Accessories/Accessories'
@@ -10,20 +10,26 @@ import Error from '../Error/Error'
 import './ProductPage.css'
 
 function ProductPage() {
-  const {tableId, productId} = useParams()
+  const { tableId, productId } = useParams()
   const [data, setData] = useState([{}])
-  const {loading, request, error} = useCallBackendAPI()
+  const [modalActive, setModalActive] = useState(false)
+  const { loading, request, error } = useCallBackendAPI()
 
   useEffect(() => {
-    request(`/${tableId}/${productId}`)
-      .then(data => setData(data))
+    request(`/${tableId}/${productId}`).then((data) => setData(data))
   }, [tableId, productId, request])
 
   const spinner = loading ? <Spinner /> : null
   const errorImage = error ? <Error /> : null
-  const content = !(loading || error) ? <Content data={data}/> : null
+  const content = !(loading || error) ? (
+    <Content
+      data={data}
+      modalActive={modalActive}
+      setModalActive={setModalActive}
+    />
+  ) : null
 
-  return(
+  return (
     <div className='product'>
       {spinner}
       {errorImage}
@@ -32,13 +38,21 @@ function ProductPage() {
   )
 }
 
-export default ProductPage;
+export default ProductPage
 
-const Content = ({data}) => {
-  return(
+const Content = ({ data, modalActive, setModalActive }) => {
+  return (
     <>
-      <ProductInfo data={data[0]}/>
-      <Accessories data={data[1]}/>
+      <ProductInfo
+        data={data[0]}
+        modalActive={modalActive}
+        setModalActive={setModalActive}
+      />
+      <Accessories
+        data={data[1]}
+        modalActive={modalActive}
+        setModalActive={setModalActive}
+      />
     </>
   )
 }

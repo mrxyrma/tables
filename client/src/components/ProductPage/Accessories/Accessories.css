@@ -1,0 +1,17 @@
+.accessories {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 10px;
+}
+
+.accessory-card {
+  display: flex;
+  align-items: center;
+}
+
+.accessory-card_image {
+  max-width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-right: 10px;
+}
