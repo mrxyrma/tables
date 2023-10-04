@@ -15,3 +15,14 @@
   object-fit: contain;
   margin-right: 10px;
 }
+
+.accessory-card_image:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+  .accessory-card {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+}

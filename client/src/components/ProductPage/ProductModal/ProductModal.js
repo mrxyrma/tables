@@ -1,6 +1,6 @@
 import './ProductModal.css'
 
-function ProductModal({setModalActive, image}) {
+function ProductModal({image, setModalActive}) {
   const closeModal = (e) => {
     if (e.key === 'Escape') {
       setModalActive(false)

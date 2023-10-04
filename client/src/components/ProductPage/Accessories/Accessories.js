@@ -1,8 +1,12 @@
-import placeholder from '../ProductInfo/placeholder.svg'
+import { useState } from 'react'
+
 import ProductModal from '../ProductModal/ProductModal'
+import placeholder from '../placeholder.svg'
+
 import './Accessories.css'
 
-function Accessories({ data, modalActive, setModalActive }) {
+function Accessories({ data }) {
+  const [modalActive, setModalActive] = useState(false)
   if (data !== undefined) {
     if (data.length === 0) {
       return (
@@ -11,10 +15,10 @@ function Accessories({ data, modalActive, setModalActive }) {
         </p>
       )
     } else {
-      const accessories = data.map((item) => {
-        const image = item.src ? data.src : placeholder
+      const accessories = data.map(item => {
+        const image = item.src ? item.src : placeholder
         return (
-          <article className='accessory-card'>
+          <article key={item.Артикул} className='accessory-card'>
             <img
               alt='Фото аксессуара'
               src={image}
@@ -22,17 +26,12 @@ function Accessories({ data, modalActive, setModalActive }) {
               onClick={() => setModalActive(true)}
             />
             <p
-              key={item['Артикул']}
-              className='product__param'
+              key={item.Артикул}
+              className='product__text'
             >
-              <b>{item['Артикул']}</b> - {item['Наименование']}
+              <b>{item.Артикул}</b> - {item.Наименование}
             </p>
-            {modalActive ? (
-              <ProductModal
-                setModalActive={setModalActive}
-                image={image}
-              />
-            ) : null}
+            {modalActive ? <ProductModal image={image} setModalActive={setModalActive}/> : null}
           </article>
         )
       })
@@ -40,8 +39,10 @@ function Accessories({ data, modalActive, setModalActive }) {
       return (
         <div>
           <p className='product__subtitle'>Принадлежности:</p>
-          <div className='accessories'>{accessories}</div>
-          <p className='product__param'>
+          <div className='accessories'>
+            {accessories}
+          </div>
+          <p className='product__text'>
             Остальные аксессуары смотри в каталоге
           </p>
         </div>

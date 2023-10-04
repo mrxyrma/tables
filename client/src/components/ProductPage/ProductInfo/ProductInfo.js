@@ -1,9 +1,13 @@
+import { useState } from 'react'
+
 import ProductModal from '../ProductModal/ProductModal'
+import placeholder from '../placeholder.svg'
 
-import placeholder from './placeholder.svg'
+import './ProductInfo.css'
 
-function ProductInfo({ data, modalActive, setModalActive }) {
+function ProductInfo({ data }) {
   const paramsArray = []
+  const [modalActive, setModalActive] = useState(false)
   const image = data['src'] ? data['src'] : placeholder
 
   //Проверка на то, что данные загрузились с сервера
@@ -27,7 +31,7 @@ function ProductInfo({ data, modalActive, setModalActive }) {
     return (
       <p
         key={index}
-        className='product__param'
+        className='product__text'
       >
         {item}
       </p>
@@ -35,25 +39,27 @@ function ProductInfo({ data, modalActive, setModalActive }) {
   })
 
   return (
-    <div className='product__info'>
+    <div className='product-info'>
       <img
-        className='product__image'
+        className='product-info__image'
         src={image}
-        alt='product'
+        alt='Фото изделия'
         onClick={() => setModalActive(true)}
       />
       <div>
-        <h2 className='product__name'>{data['Наименование']} </h2>
-        <h3 className='product__order-number'>{data['Артикул']}</h3>
+        <h2 className='product-info__name'>{data['Наименование']} </h2>
+        <h3 className='product-info__order-number'>{data['Артикул']}</h3>
         <p className='product__subtitle'>Технические характеристики:</p>
         {params}
       </div>
-      {modalActive ? (
+      {modalActive ? 
         <ProductModal
           setModalActive={setModalActive}
           image={image}
         />
-      ) : null}
+        :
+        null
+      }
     </div>
   )
 }
