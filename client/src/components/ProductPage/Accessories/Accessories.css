@@ -20,6 +20,11 @@
   cursor: pointer;
 }
 
+.product__text a {
+  text-decoration: underline;
+  color:#1B64A1;
+}
+
 @media screen and (max-width: 400px) {
   .accessory-card {
     flex-direction: column;
