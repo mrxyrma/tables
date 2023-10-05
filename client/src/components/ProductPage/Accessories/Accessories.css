@@ -9,9 +9,9 @@
   align-items: center;
 }
 
-.accessory-card_image {
-  max-width: 150px;
-  height: 150px;
+.accessory-card__image {
+  max-width: 130px;
+  height: 130px;
   object-fit: contain;
   margin-right: 10px;
 }
@@ -22,7 +22,7 @@
 
 .product__text a {
   text-decoration: underline;
-  color:#1B64A1;
+  color: #1b64a1;
 }
 
 @media screen and (max-width: 400px) {

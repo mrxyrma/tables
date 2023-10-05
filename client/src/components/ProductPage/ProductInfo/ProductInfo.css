@@ -3,8 +3,8 @@
 }
 
 .product-info__image {
-  width: 250px;
-  height: 250px;
+  width: 330px;
+  height: 330px;
   margin-right: 50px;
   object-fit: contain;
 }
@@ -47,7 +47,7 @@
   .product-info__name {
     font-size: 24px;
   }
-  
+
   .product-info__order-number {
     font-size: 20px;
   }

@@ -9,6 +9,10 @@
   font-weight: 500;
 }
 
+.product__subtitle-accessories {
+  margin: 30px 0 0;
+}
+
 .product__text {
   margin: 5px 0 0;
   line-height: 1.5;

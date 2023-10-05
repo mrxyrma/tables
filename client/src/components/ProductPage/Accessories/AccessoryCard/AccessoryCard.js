@@ -3,17 +3,19 @@ import { useState } from 'react'
 import ProductModal from '../../ProductModal/ProductModal'
 import placeholder from '../../placeholder.svg'
 
-
-function AccessoryCard({item}) {
+function AccessoryCard({ item }) {
   const image = item.src ? item.src : placeholder
   const [modalActive, setModalActive] = useState(false)
 
-  return(
-    <article key={item.Артикул} className='accessory-card'>
+  return (
+    <article
+      key={item.Артикул}
+      className='accessory-card'
+    >
       <img
         alt='Фото аксессуара'
         src={image}
-        className='accessory-card_image'
+        className='accessory-card__image'
         onClick={() => setModalActive(true)}
       />
       <p
@@ -22,7 +24,12 @@ function AccessoryCard({item}) {
       >
         <b>{item.Артикул}</b> - {item.Наименование}
       </p>
-      {modalActive ? <ProductModal image={image} setModalActive={setModalActive}/> : null}
+      {modalActive ? (
+        <ProductModal
+          image={image}
+          setModalActive={setModalActive}
+        />
+      ) : null}
     </article>
   )
 }
