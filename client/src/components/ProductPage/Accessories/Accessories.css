@@ -10,13 +10,13 @@
 }
 
 .accessory-card__image {
-  max-width: 130px;
+  width: 130px;
   height: 130px;
   object-fit: contain;
   margin-right: 10px;
 }
 
-.accessory-card_image:hover {
+.accessory-card__image:hover {
   cursor: pointer;
 }
 
@@ -26,6 +26,10 @@
 }
 
 @media screen and (max-width: 400px) {
+  .accessory-card__image {
+    margin: 0;
+  }
+
   .accessory-card {
     flex-direction: column;
     margin-bottom: 10px;
