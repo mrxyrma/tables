@@ -22,9 +22,9 @@ function Accessories({ data }) {
             Остальные аксессуары смотри{' '}
             <a
               target='blank'
-              href='https://www.cety-telekom.ru/podderzhka/katalogi-i-broshyury/'
+              href='http://192.168.102.180/nextcloud/index.php/apps/files/?dir=/Каталоги'
             >
-              в каталоге
+              в каталогах
             </a>
           </p>
         </div>
