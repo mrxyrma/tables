@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import copyFunc from '../../../../services/copyFunc'
 
 import ProductModal from '../../ProductModal/ProductModal'
 import placeholder from '../../placeholder.svg'
@@ -8,21 +9,27 @@ function AccessoryCard({ item }) {
   const [modalActive, setModalActive] = useState(false)
 
   return (
-    <article
-      key={item.Артикул}
-      className='accessory-card'
-    >
+    <article className='accessory-card'>
       <img
         alt='Фото аксессуара'
         src={image}
         className='accessory-card__image'
         onClick={() => setModalActive(true)}
       />
-      <p
-        key={item.Артикул}
-        className='product__text'
-      >
-        <b>{item.Артикул}</b> - {item.Наименование}
+      <p className='product__text'>
+        <b
+          onClick={() => copyFunc(item.Артикул)}
+          className='accessory-card__copystyle'
+        >
+          {item.Артикул}
+        </b>{' '}
+        -{' '}
+        <span
+          onClick={() => copyFunc(item.Наименование)}
+          className='accessory-card__copystyle'
+        >
+          {item.Наименование}
+        </span>
       </p>
       {modalActive ? (
         <ProductModal

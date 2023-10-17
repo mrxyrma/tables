@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import copyFunc from '../../../services/copyFunc'
 
 import ProductModal from '../ProductModal/ProductModal'
 import placeholder from '../placeholder.svg'
@@ -47,19 +48,27 @@ function ProductInfo({ data }) {
         onClick={() => setModalActive(true)}
       />
       <div>
-        <h2 className='product-info__name'>{data['Наименование']} </h2>
-        <h3 className='product-info__order-number'>{data['Артикул']}</h3>
+        <h2
+          className='product-info__name'
+          onClick={() => copyFunc(data['Наименование'])}
+        >
+          {data['Наименование']}{' '}
+        </h2>
+        <h3
+          className='product-info__order-number'
+          onClick={() => copyFunc(data['Артикул'])}
+        >
+          {data['Артикул']}
+        </h3>
         <p className='product__subtitle'>Технические характеристики:</p>
         {params}
       </div>
-      {modalActive ? 
+      {modalActive ? (
         <ProductModal
           setModalActive={setModalActive}
           image={image}
         />
-        :
-        null
-      }
+      ) : null}
     </div>
   )
 }

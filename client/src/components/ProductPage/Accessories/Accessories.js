@@ -11,7 +11,12 @@ function Accessories({ data }) {
         </p>
       )
     } else {
-      const accessories = data.map((item) => <AccessoryCard item={item} />)
+      const accessories = data.map((item) => (
+        <AccessoryCard
+          key={item.id}
+          item={item}
+        />
+      ))
       return (
         <div>
           <p className='product__subtitle product__subtitle-accessories'>
@@ -23,6 +28,7 @@ function Accessories({ data }) {
             <a
               target='blank'
               href='http://192.168.102.180/nextcloud/index.php/apps/files/?dir=/Каталоги'
+              className='accessories__link'
             >
               в каталогах
             </a>
