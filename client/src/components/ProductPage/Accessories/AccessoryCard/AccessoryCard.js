@@ -18,14 +18,14 @@ function AccessoryCard({ item }) {
       />
       <p className='product__text'>
         <b
-          onClick={() => copyFunc(item.Артикул)}
+          onClick={(e) => copyFunc(e.target)}
           className='accessory-card__copystyle'
         >
           {item.Артикул}
         </b>{' '}
         -{' '}
         <span
-          onClick={() => copyFunc(item.Наименование)}
+          onClick={(e) => copyFunc(e.target)}
           className='accessory-card__copystyle'
         >
           {item.Наименование}

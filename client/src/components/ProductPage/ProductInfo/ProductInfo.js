@@ -50,13 +50,13 @@ function ProductInfo({ data }) {
       <div>
         <h2
           className='product-info__name'
-          onClick={() => copyFunc(data['Наименование'])}
+          onClick={(e) => copyFunc(e.target)}
         >
           {data['Наименование']}{' '}
         </h2>
         <h3
           className='product-info__order-number'
-          onClick={() => copyFunc(data['Артикул'])}
+          onClick={(e) => copyFunc(e.target)}
         >
           {data['Артикул']}
         </h3>
