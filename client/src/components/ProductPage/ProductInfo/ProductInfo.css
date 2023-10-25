@@ -18,6 +18,7 @@
   font-weight: 500;
   font-size: 36px;
   cursor: copy;
+  display: inline-block;
 }
 
 .product-info__order-number {
@@ -26,6 +27,7 @@
   font-size: 32px;
   color: #595959;
   cursor: copy;
+  display: inline-block;
 }
 
 @media screen and (max-width: 1030px) {

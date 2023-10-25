@@ -54,6 +54,7 @@ function ProductInfo({ data }) {
         >
           {data['Наименование']}{' '}
         </h2>
+        <br />
         <h3
           className='product-info__order-number'
           onClick={(e) => copyFunc(e.target)}
