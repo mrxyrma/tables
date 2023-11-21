@@ -7,7 +7,7 @@ const visibleItems = createSlice({
     allItems: [],
   },
   reducers: {
-    setAlllItems(state, action) {
+    setAllItems(state, action) {
       state.allItems = action.payload
     },
     setVisibleItems(state, action) {
@@ -16,6 +16,6 @@ const visibleItems = createSlice({
   },
 })
 
-export const { setAlllItems, setVisibleItems } = visibleItems.actions
+export const { setAllItems, setVisibleItems } = visibleItems.actions
 
 export default visibleItems.reducer
