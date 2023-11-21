@@ -92,7 +92,6 @@ app.get('/api/:selectionPage/:productPage', async (req, res) => {
 
   client.close()
 
-  // data.push(productInfo[0], pureArrWithAccessories)
   data.product = productInfo[0]
   data.accessories = pureArrWithAccessories
 
