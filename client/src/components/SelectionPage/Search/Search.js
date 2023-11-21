@@ -1,12 +1,20 @@
-import "./Search.css"
+import { useDispatch, useSelector } from 'react-redux'
+import { setSearchValue } from '../../../store/searchReducer'
+import { setVisibleItems } from '../../../store/visibleItemsReducer'
 
-function Search({ data, setItems, inputValue, setInputValue }) {
+import './Search.css'
+
+function Search() {
+  const dispatch = useDispatch()
+  const allItems = useSelector((state) => state.visibleItems.allItems)
+  const searchValue = useSelector((state) => state.searchValue.searchValue)
+
   const searching = (e) => {
     document
-      .querySelectorAll("input:checked")
+      .querySelectorAll('input:checked')
       .forEach((item) => (item.checked = false))
-    setInputValue(e.target.value)
-    const foundItems = data.filter(
+    dispatch(setSearchValue(e.target.value))
+    const foundItems = allItems.filter(
       (item) =>
         String(item.Артикул)
           .toUpperCase()
@@ -15,17 +23,17 @@ function Search({ data, setItems, inputValue, setInputValue }) {
           .toUpperCase()
           .includes(e.target.value.toUpperCase())
     )
-    setItems(foundItems)
+    dispatch(setVisibleItems(foundItems))
   }
 
   return (
     <div className='search'>
       <input
         className='search_input'
-        type='input'
+        type='search'
         placeholder='Поиск по артикулу или наименованию'
         onChange={searching}
-        value={inputValue}
+        value={searchValue}
       />
     </div>
   )

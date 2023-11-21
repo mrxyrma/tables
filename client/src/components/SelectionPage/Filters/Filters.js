@@ -1,9 +1,14 @@
-import { memo } from 'react'
 import Fieldset from './Fieldset/Fieldset'
+
+import { memo } from 'react'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { setVisibleItems } from '../../../store/visibleItemsReducer'
+import { setSearchValue } from '../../../store/searchReducer'
 
 import './Filters.css'
 
-function Filters({ data, setItems, setInputValue }) {
+function Filters() {
   const ignoreTitles = [
     '_id',
     'Артикул',
@@ -13,21 +18,18 @@ function Filters({ data, setItems, setInputValue }) {
     'Примечание',
   ] //Список полей таблицы, которые игнорируются в филдсетах
 
-  const allColumnTitles = new Set() //Все без исключения названия столбцов таблицы
+  const dispatch = useDispatch()
+  const allItems = useSelector((state) => state.visibleItems.allItems)
 
-  data.map((item) =>
-    Object.keys(item).forEach((item) => allColumnTitles.add(item))
-  )
-
-  const fieldsetTitles = Array.from(allColumnTitles).filter(
+  const fieldsetTitles = Object.keys(allItems[0]).filter(
     (item) => !ignoreTitles.includes(item)
-  ) //Массив с заголовками филдсетов (шапка таблицы, но за исключением тех столбцов, которые не нужны)
+  ) //Массив с заголовками филдсетов (шапка таблицы)
 
   let arrayWithFilters = [] //Актуальное значение фильтров всей формы. Каждый элемент - это объект, где ключ - название филдсета, а значение - массив с уникальными значениями
   fieldsetTitles.forEach((fieldsetTitle, index) => {
     const obj = {}
     obj[fieldsetTitle] = Array.from(
-      new Set(data.map((item) => item[`${fieldsetTitle}`]))
+      new Set(allItems.map((item) => item[`${fieldsetTitle}`]))
     ) //Объект с филдсетами в формате {Бренд: [КЭАЗ, Lovato...]}
     arrayWithFilters[index] = obj
   })
@@ -49,8 +51,8 @@ function Filters({ data, setItems, setInputValue }) {
   function settingItems(e) {
     e.preventDefault()
 
-    const filteredItems = data.filter((item) => {
-      const arrWithValues = [] //массив со значениями каждой отдельной позиции из таблицы
+    const filteredItems = allItems.filter((item) => {
+      const arrWithValues = [] //массив со значеними каждой отдельной позиции из таблицы
 
       fieldsetTitles.forEach((fieldsetTitle) => {
         arrWithValues.push(item[fieldsetTitle])
@@ -63,8 +65,8 @@ function Filters({ data, setItems, setInputValue }) {
       )
     })
 
-    setInputValue('')
-    setItems(filteredItems)
+    dispatch(setSearchValue(''))
+    dispatch(setVisibleItems(filteredItems))
 
     document
       .querySelector('.table')

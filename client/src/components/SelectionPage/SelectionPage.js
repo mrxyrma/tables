@@ -5,43 +5,41 @@ import Spinner from '../Spinner/Spinner'
 import Error from '../Error/Error'
 
 import useCallBackendAPI from '../../services/useCallBackendAPI'
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
+
+import { useDispatch } from 'react-redux'
+import { setAllItems, setVisibleItems } from '../../store/visibleItemsReducer'
 
 import './SelectionPage.css'
 
 function SelectionPage() {
-  const {tableId} = useParams()
-  const {loading, request, error} = useCallBackendAPI()
+  const { tableId } = useParams()
+  const { loading, request, error } = useCallBackendAPI()
 
-  const [items, setItems] = useState([{}])
-  const [inputValue, setInputValue] = useState('')
-  const ref = useRef()
   const title = useRef()
 
+  const dispatch = useDispatch()
   useEffect(() => {
     request(`/${tableId}`)
-      .then(data => {
+      .then((data) => {
         title.current = data[0] //Заголовок страницы (название таблицы)
-        setItems(data[1]) //Данные из таблицы
-        ref.current = data[1]
-      })
-      .catch(err => console.log(err))
-  }, [request, tableId])
+        document.title = title.current
 
-  useEffect(()=>{
-    if (title.current !== undefined) {
-      document.title = title.current
-    }
-  })
+        dispatch(setAllItems(data[1]))
+        dispatch(setVisibleItems(data[1]))
+      })
+      .catch((err) => console.log(err))
+  }, [])
 
   const spinner = loading ? <Spinner /> : null
   const errorImage = error ? <Error /> : null
-  const content = !(loading || error || !ref.current) ? <Content data={ref.current} items={items} setItems={setItems} setInputValue={setInputValue}/> : null
 
-  return(
+  const content = !(loading || error || !title.current) ? <Content /> : null
+
+  return (
     <>
-      <Search data={ref.current} setItems={setItems} inputValue={inputValue} setInputValue={setInputValue}/>
+      <Search />
       <h1 className='title'>{title.current}</h1>
       {spinner}
       {errorImage}
@@ -52,11 +50,11 @@ function SelectionPage() {
 
 export default SelectionPage
 
-const Content = ({data, items, setItems, setInputValue}) => {
-  return(
-    <div className="table-page__content">
-      <Filters data={data} setItems={setItems} setInputValue={setInputValue}/>
-      <Table items={items}/>
+const Content = () => {
+  return (
+    <div className='table-page__content'>
+      <Filters />
+      <Table />
     </div>
   )
 }
