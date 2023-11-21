@@ -11,19 +11,10 @@ function ProductInfo({ data }) {
   const [modalActive, setModalActive] = useState(false)
   const image = data['src'] ? data['src'] : placeholder
 
-  //Проверка на то, что данные загрузились с сервера
-  if (Object.keys(data).length !== 0) {
-    document.title = `${data.Артикул} - ${data.Наименование}`
-  }
+  document.title = `${data.Артикул} - ${data.Наименование}`
 
   for (let key in data) {
-    if (
-      key !== '_id' &&
-      key !== 'Артикул' &&
-      key !== 'Наименование' &&
-      key !== 'Серия' &&
-      key !== 'src'
-    ) {
+    if (!['_id', 'Артикул', 'Наименование', 'Серия', 'src'].includes(key)) {
       paramsArray.push(`${key}: ${data[key]}`)
     }
   }

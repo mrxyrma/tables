@@ -1,8 +1,8 @@
-import Filters from './Filters/Filters'
-import Table from './Table/Table'
-import Search from './Search/Search'
-import Spinner from '../Spinner/Spinner'
-import Error from '../Error/Error'
+import Filters from '../../components/Filters/Filters'
+import Table from '../../components/Table/Table'
+import Search from '../../components/Search/Search'
+import Spinner from '../../components/Spinner/Spinner'
+import Error from '../../components/Error/Error'
 
 import useCallBackendAPI from '../../services/useCallBackendAPI'
 import { useEffect, useRef } from 'react'
@@ -22,12 +22,12 @@ function SelectionPage() {
   const dispatch = useDispatch()
   useEffect(() => {
     request(`/${tableId}`)
-      .then((data) => {
-        title.current = data[0] //Заголовок страницы (название таблицы)
+      .then((tableData) => {
+        title.current = tableData.title //Заголовок страницы (название таблицы)
         document.title = title.current
 
-        dispatch(setAllItems(data[1]))
-        dispatch(setVisibleItems(data[1]))
+        dispatch(setAllItems(tableData.data))
+        dispatch(setVisibleItems(tableData.data))
       })
       .catch((err) => console.log(err))
   }, [])

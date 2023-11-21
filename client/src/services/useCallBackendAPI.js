@@ -7,12 +7,7 @@ const useCallBackendAPI = () => {
   const serverIp = 'http://192.168.102.211/api'
 
   const request = useCallback(
-    async (
-      path,
-      method = 'GET',
-      body = null,
-      headers = { 'Content-Type': 'application/json' }
-    ) => {
+    async (path, method = 'GET', body = null, headers = { 'Content-Type': 'application/json' }) => {
       setLoading(true)
       try {
         const response = await fetch(`${serverIp}${path}`, {
@@ -21,9 +16,7 @@ const useCallBackendAPI = () => {
           headers,
         })
         if (!response.ok) {
-          throw new Error(
-            `Could not fetch ${serverIp}${path}, status: ${response.status}`
-          )
+          throw new Error(`Could not fetch ${serverIp}${path}, status: ${response.status}`)
         }
 
         const data = await response.json()

@@ -3,34 +3,23 @@ import Fieldset from './Fieldset/Fieldset'
 import { memo } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { setVisibleItems } from '../../../store/visibleItemsReducer'
-import { setSearchValue } from '../../../store/searchReducer'
+import { setVisibleItems } from '../../store/visibleItemsReducer'
+import { setSearchValue } from '../../store/searchReducer'
 
 import './Filters.css'
 
 function Filters() {
-  const ignoreTitles = [
-    '_id',
-    'Артикул',
-    'Наименование',
-    'src',
-    'Серия',
-    'Примечание',
-  ] //Список полей таблицы, которые игнорируются в филдсетах
+  const ignoreTitles = ['_id', 'Артикул', 'Наименование', 'src', 'Серия', 'Примечание'] //Список полей таблицы, которые игнорируются в филдсетах
 
   const dispatch = useDispatch()
   const allItems = useSelector((state) => state.visibleItems.allItems)
 
-  const fieldsetTitles = Object.keys(allItems[0]).filter(
-    (item) => !ignoreTitles.includes(item)
-  ) //Массив с заголовками филдсетов (шапка таблицы)
+  const fieldsetTitles = Object.keys(allItems[0]).filter((item) => !ignoreTitles.includes(item)) //Массив с заголовками филдсетов (шапка таблицы)
 
   let arrayWithFilters = [] //Актуальное значение фильтров всей формы. Каждый элемент - это объект, где ключ - название филдсета, а значение - массив с уникальными значениями
   fieldsetTitles.forEach((fieldsetTitle, index) => {
     const obj = {}
-    obj[fieldsetTitle] = Array.from(
-      new Set(allItems.map((item) => item[`${fieldsetTitle}`]))
-    ) //Объект с филдсетами в формате {Бренд: [КЭАЗ, Lovato...]}
+    obj[fieldsetTitle] = Array.from(new Set(allItems.map((item) => item[`${fieldsetTitle}`]))) //Объект с филдсетами в формате {Бренд: [КЭАЗ, Lovato...]}
     arrayWithFilters[index] = obj
   })
 
@@ -59,18 +48,14 @@ function Filters() {
       })
 
       return arrWithValues.every((arrItem, index) =>
-        arrayWithFilters[index][
-          Object.keys(arrayWithFilters[index])[0]
-        ].includes(arrItem)
+        arrayWithFilters[index][Object.keys(arrayWithFilters[index])[0]].includes(arrItem)
       )
     })
 
     dispatch(setSearchValue(''))
     dispatch(setVisibleItems(filteredItems))
 
-    document
-      .querySelector('.table')
-      .scrollIntoView({ behavior: 'smooth', block: 'start' })
+    document.querySelector('.table').scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   return (

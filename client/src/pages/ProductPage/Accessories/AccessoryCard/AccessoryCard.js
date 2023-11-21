@@ -7,7 +7,6 @@ import placeholder from '../../placeholder.svg'
 function AccessoryCard({ item }) {
   const image = item.src ? item.src : placeholder
   const [modalActive, setModalActive] = useState(false)
-
   return (
     <article className='accessory-card'>
       <img
