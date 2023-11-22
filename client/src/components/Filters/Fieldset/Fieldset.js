@@ -10,6 +10,7 @@ function Fieldset({ title, values, getSelectedBtns }) {
       <FilterButton
         key={label}
         label={label}
+        title={title}
       />
     ))
   } else {
@@ -19,6 +20,7 @@ function Fieldset({ title, values, getSelectedBtns }) {
         <FilterButton
           key={label}
           label={label}
+          title={title}
         />
       ))
   }

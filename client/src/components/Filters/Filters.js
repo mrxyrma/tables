@@ -55,13 +55,21 @@ function Filters() {
     dispatch(setSearchValue(''))
     dispatch(setVisibleItems(filteredItems))
 
+    const myFormData = new FormData(document.forms.filtersForm)
+    for (const [key, value] of myFormData) {
+      console.log(`${key}: ${value}`)
+    }
+
     document.querySelector('.table').scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   return (
     <aside className='filters'>
       <h2 className='subtitle'>Фильтры:</h2>
-      <form className='filter'>
+      <form
+        className='filter'
+        id='filtersForm'
+      >
         {fieldsets}
         <button
           className='filters__button'
